@@ -1,0 +1,71 @@
+{% extends 'kobosh/base.html' %}
+{% block 'content' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'kobosh/login&signup.css' %}">
+    <style>
+        .fa-user {
+            color: #000000;
+        }
+        @media screen and (max-width:767px) {
+            .bottom {
+                position: relative;
+                left: 2pc;
+            }
+            input {
+                position: relative;
+                left: -6px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="all_forms">
+        <div class="create" style="top: 8pc;">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+            <form action="" method="post" style="left: 9px; position: relative;">
+                {% csrf_token %}
+
+                <h2>Login</h2>
+                <hr style="position: relative; left:-12px" ; id="h2_id">
+                <label for="input">
+                    <strong>Email Address or Phone number</strong>
+                    <br>
+                    <input id="full_name" type="email" name="email">
+                </label><br><br>
+                <label for="input">
+                    <strong>Password</strong>
+                    <a style="text-decoration: none;" id="forgotpass" href="{% url 'members:forgotpass' %}">Forgot password?</a>
+                    <br>
+                    <input id="full_name" type="password" name="password">
+                </label><br><br>
+                <input style="width: 95.4%;" type="submit" value="Login" class="account_create" name="passowrd">
+
+            </form>
+            <div class="bottom" style="left: 9px; position: relative;">
+                <p style="color: black;">Don't have an account?</p>
+                <input onclick="location.href='{% url 'members:signup_user' %}'" id="create_acc" type="submit"
+                    value="Create an Account">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+{% endblock %}

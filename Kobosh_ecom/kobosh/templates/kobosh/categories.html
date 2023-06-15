@@ -1,0 +1,120 @@
+{% extends 'kobosh/base.html' %}
+
+{% block 'content' %}
+{% load humanize %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'kobosh/cate.css' %}">
+  <title>Category</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="{% static 'kobosh/modern.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<style>
+  nav ul .onhover{
+      color: #000000;
+      font-size:18px;
+    }
+</style>
+</head>
+
+
+<body>
+
+
+
+
+  <div class="all_page">
+    <div class="left_side">
+
+      
+      <div id="">
+        <ul class="links">
+          <h1>Categories</h1>
+          <hr />
+          <a href="{% url 'kobosh:cate' %}">All</a>
+          {% for c in categories %}
+          {% if slug == 'c.slug' %}
+          <a id="active" href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+          {% endif %}
+          
+          <a href="{{ c.get_absolute_url }}">{{ c.name }}</a>
+          
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    
+    <div class="all">
+      {% for product in products %}
+      <div class="prod swiper">
+        <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
+  
+          <div class="swiper-slide">
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+              static "img/no_image.png" %}{% endif %}" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% if product.image1 %}{{ product.image1.url }}{% else %}{% 
+              static "img/no_image.png" %}{% endif %}" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="{% if product.image2 %}{{ product.image2.url }}{% else %}{% 
+              static "img/no_image.png" %}{% endif %}" alt="">
+          </div>
+        </div>
+        <div class="swiper-pagination down"></div>
+        
+        <h3>{{ product.name }}</h3>
+        <p><strong class="price"> &#8358; {{ product.new_price|intcomma }}</strong></p>
+
+        <p><del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del></p>
+
+        <button onclick="location.href='{{ product.get_absolute_url }}'">Add to Cart</button>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="{% static 'kobosh/swiper.js' %}"></script>
+
+
+  <script>
+    btn = document.querySelector('.hamburger');
+    body = document.querySelector("body")
+    navlist = document.querySelector("ul a");
+
+    bod = document.querySelector("#head");
+
+    btn1 = document.querySelector(".burger1");
+
+    btn.addEventListener("click", () => {
+      navlist.classList.toggle("clipped").checked;
+    });
+    ul = document.getElementById("hamburger");
+
+    ul.addEventListener("click", () => {
+      navlist.classList.toggle("clipped").checked = false;
+    });
+  </script>
+
+
+  
+
+  <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
+{% endblock %}

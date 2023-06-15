@@ -1,0 +1,203 @@
+{% extends 'kobosh/base.html' %}
+{% load static %}
+{% block 'content' %}
+{% load humanize %}
+
+<head>
+  <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+/>
+<link rel="stylesheet" href="{% static 'kobosh/modern.css' %}">
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<style>
+  nav ul ._home{
+      color: #000000;
+      font-size:18px;
+    }
+</style>
+</head>
+<body>
+  <div class="cont" id="cont">
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="hero_text">
+        <h1>Step Up Your Style.</h1>
+        <p>
+          Discover the Latest Trends in Men's Fashion at Our Online Store.
+        </p>
+        <a href="{% url 'kobosh:cate' %}">SHOP NOW</a>
+      </div>
+
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="{% static 'kobosh/hero_image.png' %}" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'kobosh/hero_image1.png' %}" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'kobosh/hero_image2.png' %}" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'kobosh/hero_image3.png' %}" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'kobosh/hero_image4.png' %}" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="{% static 'kobosh/hero_image5.png' %}" alt="" />
+        </div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+<div class="category">
+
+      
+  <i class="fa-solid fa-chevron-left" id="prev"></i>
+
+  <div class="all_category">
+
+ {% for c in categories %}
+ <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
+      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
+      <h3>{{ c.name }}</h3>
+    </div>
+ {% endfor %}
+
+ 
+  </div>
+  <i class="fa-solid fa-chevron-right" id="next"></i>
+</div>
+
+<div class="middle">
+  <div class="top_middle">
+      <h4>See All <i class="fa-solid fa-arrow-right-long"></i></h4>
+      <h3>New Arrival</h3>
+  </div>
+
+  <div class="all_product">
+    {% for product in products %}
+      
+      <div class="animated product">
+    <div class="swiper">
+
+      <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
+  
+        <div class="swiper-slide">
+          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+            static "img/no_image.png" %}{% endif %}" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{% if product.image1 %}{{ product.image1.url }}{% else %}{% 
+            static "img/no_image.png" %}{% endif %}" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img src="{% if product.image2 %}{{ product.image2.url }}{% else %}{% 
+            static "img/no_image.png" %}{% endif %}" alt="">
+        </div>
+      </div>
+  
+        <div class="ab">
+        <div class="swiper-pagination down"></div>
+
+          <h3>{{ product.name }}</h3>
+          <del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del>
+          <p>&#8358; {{ product.new_price|intcomma }}</p>
+        </div>
+
+    </div>
+    </div>
+ {% endfor %}
+
+  </div>
+</div>
+
+<div class="discount">
+  <div class="discount_shop">
+    <h3>Get up to 10%</h3>
+    <h1>Discount</h1>
+    <h2>On All Sales This Week</h2>
+    <a href="{% url 'kobosh:cate' %}">SHOP NOW</a>
+  </div>
+  <!-- <div class="all_discount">
+    <img src="dicount.png" alt="">
+  </div> -->
+  <!-- <div class="all_discount">
+    <img src="discount1.png" alt="">
+  </div>
+  <div class="all_discount">
+    <img src="discount2.png" alt="">
+  </div>
+  <div class="all_discount">
+    <img src="discount3.png" alt="">
+  </div> -->
+</div>
+<img id="all_img" src="all_image.png" alt="" />
+<img id="all_img1" src="all_image1.png" alt="">
+
+
+
+<!-- <div class="top_selling tp">
+  <div class="top_middle">
+    <h4>See All <i class="fa-solid fa-arrow-right-long"></i></h4>
+    <h3>Top Selling</h3>
+  </div>
+  <div class="all_product">
+
+    
+    
+
+  </div>
+</div> -->
+<div class="our_store">
+  <div class="head">
+    <h2>Our Store Has It All, Shop From Our Collections!</h2>
+  </div>
+  <div class="all_store">
+
+    {% for c in categories %}
+    <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
+      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
+         <h3>{{ c.name }}</h3>
+       </div>
+    {% endfor %}
+  </div>
+</div>
+<script src="{% static 'kobosh/modern.js' %}"></script>
+<script
+    src="https://kit.fontawesome.com/9da17deac8.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="{% static 'kobosh/swiper.js' %}"></script>
+    <script src="{% static 'kobosh/scripts.js' %}"></script>
+
+<script>
+  const scrollLeft = document.querySelector("#prev");
+      const scrollRight = document.querySelector("#next");
+      const scrollContent = document.querySelector(".all_category");
+
+      scrollLeft.addEventListener("click", () => {
+        scrollContent.scrollBy({
+          left: -300,
+          behavior: "smooth",
+        });
+      });
+
+      scrollRight.addEventListener("click", () => {
+        scrollContent.scrollBy({
+          left: 300,
+          behavior: "smooth",
+        });
+      });
+</script>
+
+
+</body>
+{% endblock %}

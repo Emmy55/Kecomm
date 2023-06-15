@@ -1,0 +1,1 @@
+web gunicorn Kobosh_ecom.wsgi:application --log-file -

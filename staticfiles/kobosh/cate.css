@@ -1,0 +1,556 @@
+@media only screen and (max-width: 767px) {
+  * {
+      margin: 0;
+      padding: 0;
+    }
+    .left_side {
+      height: 190vh;
+      width: 70%;
+      overflow-y: scroll;
+      position: fixed;
+      z-index: 40;
+      top: 0;
+      overflow: hidden;
+    }
+
+   
+    #mySelect {
+      color: #000000;
+      font-size:18px;
+    }
+
+    .clipped {
+      transition-timing-function: ease-in-out;
+      transition: 0.4s all;
+      width: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    ul {
+      position: absolute;
+      background-color: #AF9331;
+      left: 0;
+      padding-top: 50px;
+      z-index: 2;
+      top: -10px;
+      border-radius: 0px 10px 10px 0px;
+      right: 0;
+      /* height: 60pc; */
+      width: 165%;
+      text-align: center;
+      transition: .5s all;
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+
+    a {
+      display: block;
+      padding: 20px;
+      font-weight: bolder;
+      top: 1px;
+      color: white;
+      position: relative;
+    }
+
+    .links a:hover {
+      background-color: #af9431a3;
+    }
+
+    .links a.active {
+      background-color: #af943176;
+    }
+
+    .links a:nth-child(1) {
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    .links a:last-child {
+      border-radius: 0px 0px 20px 20px;
+    }
+
+    /* .links {
+      display: flex;
+      flex-wrap: wrap;
+    } */
+  
+    .hamburger {
+      position: absolute;
+      display: block;
+      background-color: #AF9331;
+      z-index: 90;
+      padding: 12px;
+      top: 10pc;
+      font-size: 30px;
+    }
+      
+    .links a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      /* height: 30px; */
+      width: 85%;
+      text-align: center;
+
+      font-weight: bolder;
+      background-color: #af9331;
+      border: none;
+    }
+
+
+
+
+
+
+
+
+
+
+    
+
+  .links a:hover {
+    background-color: #af9431a3;
+  }
+
+  .links a.active {
+    background-color: #af943176;
+  }
+  h1 {
+    text-align:center;
+    font-weight: bolder;
+    color: #000000;
+  }
+  
+  hr {
+    position: relative;
+    left: 20%;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    width: 60%;
+  }
+
+  
+
+  .all {
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 70%; */
+    height: fit-content;
+    position: relative;
+    /* left: 25%; */
+  
+  }
+  .all .prod {
+    background-color: #af9331;
+    height: 15pc;
+    border-radius: 20px;
+    width: 43%;
+    margin: 10px;
+    right: -1.5%;
+    position: relative;
+    top: 6.5pc;
+  }
+ 
+  .all .prod h3,
+  .all .prod p,
+  .all .prod button {
+    position: relative;
+    /* left: 20%; */
+    font-size: 15px;
+    text-align: center;
+    /* align-items: center; */
+    width: 100%;
+    top: 2%;
+  }
+  .all .prod h3{
+    font-size: 13px;
+    width: 101%;
+  }
+  .all .prod p {
+    font-size: 12px;
+    position: relative;
+  }
+
+  .all .prod button {
+    height: 12%;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    font-weight: bolder;
+    width: 53%;
+    position: relative;
+    left: 24%;
+    top: 7px;
+    font-size: 12px;
+    /* text-align: center; */
+  }
+
+  .all img {
+    width: 100%;
+    border-radius: 20px 20px 0px 0px;
+    height: 69%;
+  }
+
+  .all h2 {
+    width: 100%;
+    position: relative;
+    top: 6pc;
+    padding: 16px;
+    text-align: center;
+  }
+  footer ,#last_hr, .payment{
+    display: none;
+  }
+  .copyright{
+    position: relative;
+    top: 95px;
+    height: 20px;
+  }
+  #arrow {
+    top: -23px;
+    position: relative;
+    /* move the element 200px to the right */
+}
+  html {
+    scroll-behavior: smooth;
+  }
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #mySelect {
+      color: #000000;
+      font-size:18px;
+    }
+    .left_side .links a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      height: 30px;
+      border: 0.1px solid black;
+      width: 100%;
+      /* justify-content: center; */
+      text-align: center;
+      padding: 18px 0px 1px 0px;
+      border-bottom: none;
+
+      font-weight: bolder;
+      background-color: #af9331;
+    }
+
+    .left_side .links a:hover {
+      background-color: #af9431a3;
+    }
+
+    .left_side .links a.active {
+      background-color: #af943176;
+    }
+    #active {
+      background-color: #3eaf3176;
+    }
+    
+    .inactive {
+      background-color: #af9431a3;
+    }
+    .left_side .links a:first-child {
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    .left_side .links a:last-child {
+      border-radius: 0px 0px 20px 20px;
+    }
+
+    .left_side .links {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* .burger {
+    display: none;
+  } */
+    .left_side {
+      height: 190vh;
+      width: 25%;
+      overflow-y: scroll;
+      position: fixed;
+      top: 10%;
+      left: 9px;
+      overflow: hidden;
+    }
+
+    .left_side .links h1 {
+      font-weight: bolder;
+      position: fixed;
+      color: #af9331;
+      top: 0px;
+      margin-bottom: 90%;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .left_side .links hr {
+      margin: 0px 2px 20px 2px;
+      border: 2px solid #af9331;
+      border-radius: 20px;
+      position: relative;
+      top: -17px;
+      width: 51px;
+    }
+
+    .all {
+      display: flex;
+      flex-wrap: wrap;
+      width: 70%;
+      height: fit-content;
+      float: right;position: relative;
+      left: 29%;
+    
+    }
+    .all_page {
+      display: flex;
+  flex-direction: column;
+  height: 100%;
+  }
+    .all .prod {
+      background-color: #af9331;
+      height: 22pc;
+      border-radius: 20px;
+      width: 45%;
+      margin: 10px;
+      position: relative;
+      top: 6.5pc;
+    }
+    .all .prod button:hover {
+      background-color: black;
+      color: #AF9331;
+      cursor: pointer;
+    }
+    .all .prod h3,
+    .all .prod p,
+    .all .prod button {
+      position: relative;
+      /* left: 20%; */
+      text-align: center;
+      color: black;
+      /* align-items: center; */
+      width: 100%;
+      /* top: -5%; */
+    }
+
+    .all .prod p {
+      position: relative;
+      top: 10px;
+    }
+    .all .prod p strong {
+      color: black;
+
+    }
+
+    .all .prod button {
+      padding: 10px 20px 10px 20px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bolder;
+      width: 50%;
+      position: relative;
+      top: 5%;
+      left: 25%;
+      /* text-align: center; */
+    }
+
+    .all img {
+      width: 100%;
+      border-radius: 20px 20px 0px 0px;
+      height: 69%;
+    }
+
+    .all h2 {
+      width: 100%;
+      color: black;
+      margin: 20px;
+      position: relative;
+      top: 6pc;
+      text-align: center;
+    }
+    footer ,#last_hr, .payment{
+      display: none;
+    }
+    .copyright{
+      position: relative;
+      top: 95px;
+      height: 20px;
+    }
+    #arrow {
+      top: -23px;
+      position: relative;
+      /* move the element 200px to the right */
+  }
+  }
+  @media only screen and (min-width: 1024px) {
+
+    #mySelect {
+      color: #000000;
+      font-size:18px;
+    }
+    .left_side .links a {
+      text-decoration: none;
+      color: rgb(0, 0, 0);
+      height: 30px;
+      border: 0.1px solid black;
+      width: 100%;
+      /* justify-content: center; */
+      text-align: center;
+      padding: 18px 0px 1px 0px;
+      border-bottom: none;
+
+      font-weight: bolder;
+      background-color: #af9331;
+    }
+
+    .left_side .links a:hover {
+      background-color: #af9431a3;
+    }
+
+    .left_side .links a.active {
+      background-color: #af943176;
+    }
+    #active {
+      background-color: #3eaf3176;
+    }
+    
+    .inactive {
+      background-color: #af9431a3;
+    }
+    .left_side .links a:first-child {
+      border-radius: 20px 20px 0px 0px;
+    }
+
+    .left_side .links a:last-child {
+      border-radius: 0px 0px 20px 20px;
+    }
+
+    .left_side .links {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    /* .burger {
+    display: none;
+  } */
+    .left_side {
+      height: 190vh;
+      width: 20%;
+      overflow-y: scroll;
+      position: fixed;
+      top: 10%;
+      left: 9px;
+      overflow: hidden;
+    }
+
+    .left_side .links h1 {
+      font-weight: bolder;
+      position: fixed;
+      color: #af9331;
+      top: 0px;
+      margin-bottom: 90%;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .left_side .links hr {
+      margin: 0px 2px 20px 2px;
+      border: 2px solid #af9331;
+      border-radius: 20px;
+      position: relative;
+      top: -17px;
+      width: 51px;
+    }
+
+    .all {
+      display: flex;
+      flex-wrap: wrap;
+      width: 70%;
+      height: fit-content;
+      float: right;position: relative;
+      left: 25%;
+    
+    }
+    .all_page {
+      display: flex;
+  flex-direction: column;
+  height: 100%;
+  }
+    .all .prod {
+      background-color: #af9331;
+      height: 23pc;
+      border-radius: 20px;
+      width: 30%;
+      margin: 10px;
+      position: relative;
+      top: 6.5pc;
+    }
+    .all .prod button:hover {
+      background-color: black;
+      color: #AF9331;
+      cursor: pointer;
+    }
+    .all .prod h3,
+    .all .prod p,
+    .all .prod button {
+      position: relative;
+      /* left: 20%; */
+      text-align: center;
+      color: black;
+      /* align-items: center; */
+      width: 100%;
+      /* top: -5%; */
+    }
+
+    .all .prod p {
+      position: relative;
+      top: 10px;
+    }
+    .all .prod p strong {
+      color: black;
+
+    }
+
+    .all .prod button {
+      padding: 10px 30px 10px 30px;
+      border-radius: 20px;
+      border: none;
+      font-weight: bolder;
+      width: 50%;
+      position: relative;
+      top: 3.5%;
+      left: 25%;
+      /* text-align: center; */
+    }
+
+    .all img {
+      width: 100%;
+      border-radius: 20px 20px 0px 0px;
+      height: 69%;
+    }
+
+    .all h2 {
+      width: 100%;
+      color: black;
+      margin: 20px;
+      position: relative;
+      top: 6pc;
+      text-align: center;
+    }
+    footer ,#last_hr, .payment{
+      display: none;
+    }
+    .copyright{
+      position: relative;
+      top: 95px;
+      height: 20px;
+    }
+    #arrow {
+      top: -23px;
+      position: relative;
+      /* move the element 200px to the right */
+  }
+  }

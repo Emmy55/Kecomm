@@ -1,0 +1,316 @@
+{% extends "kobosh/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block 'content' %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <style>
+        @media screen and (min-device-width: 0) and (max-device-width: 767px) {
+            .right_des {
+                position: relative;
+                width: 50%;
+                top: -15pc;
+                float: right;
+            }
+
+            .items {
+                width: 81%;
+                position: relative;
+                top: 5pc;
+                border: 1px solid rgb(233, 212, 23);
+                padding: 15px;
+                left: 5%;
+                margin-bottom: 80px;
+                height: 39pc;
+                border-radius: 20px;
+            }
+
+            .items_img {
+                width: 47%;
+                height: 230px;
+            }
+
+            .items .des {
+                position: relative;
+                top: 7pc;
+                width: 200%;
+                right: 98%;
+            }
+
+            .items img {
+                width: 100%;
+                height: 70%;
+            }
+
+            input[type='submit'] {
+                background-color: #AF9331;
+                border: none;
+                /* float: right; */
+                top: -30px;
+                position: relative;
+                width: 70%;
+                height: 30px;
+                border-radius: 15px;
+                color: white;
+            }
+            .items {
+                display: flex;
+                flex-wrap: wrap;
+                /* width: 70%; */
+                height: fit-content;
+                /* float: right; */
+                position: relative;
+                /* left: 25%; */
+
+            }
+
+            .prod {
+                position: relative;
+                top: 1pc;
+                width: 46.6%;
+                left: -6%;
+                background-color: #af9331;
+                height: 16pc;
+                border-radius: 20px;
+                margin: 10px;
+
+            }
+
+            .items .prod p,
+            .items .prod h3,
+            .items .prod button {
+                position: relative;
+                font-size:10px;
+                /* left: 20%; */
+                text-align: center;
+                color: black;
+                /* align-items: center; */
+                width: 100%;
+                /* top: -5%; */
+            }
+            .prod img {
+                border-radius: 20px;
+                width: 100%;
+                height: 9pc;
+            }
+            .items .prod button:hover {
+                background-color: black;
+                color: #AF9331;
+                cursor: pointer;
+            }
+
+            .items .prod button {
+                padding: 10px 15px 10px 15px;
+                border-radius: 20px;
+                border: none;
+                font-weight: bolder;
+                width: 80%;
+                position: relative;
+                top: 3.5%;
+                left: 10%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media only screen and (min-width: 1024px) {
+
+
+            h3 {
+                height: 19px;
+                color: red;
+                z-index: 9999;
+                overflow: hidden;
+            }
+
+            .right_des {
+                position: relative;
+                width: 50%;
+                left: 1%;
+                top: -19pc;
+                float: right;
+            }
+
+            .items {
+                width: 50%;
+                position: relative;
+                top: 5pc;
+                border: 1px solid rgb(233, 212, 23);
+                padding: 15px;
+                left: 25%;
+                margin-bottom: 80px;
+                height: 39pc;
+                border-radius: 20px;
+            }
+
+            .items_img {
+                position: relative;
+                top: 50px;
+                left: 5%;
+                width: 43%;
+                height: 360px;
+            }
+
+
+
+
+            .right_des input[type='submit'] {
+                background-color: #AF9331;
+                border: none;
+                /* float: right; */
+                top: 40px;
+                position: relative;
+                width: 30%;
+                height: 30px;
+                left: -34%;
+                border-radius: 15px;
+                color: white;
+            }
+
+            .right_des h2,
+            .right_des p,
+            .des,
+            select,
+            option {
+                color: black;
+            }
+
+            .right_des h2 {
+                margin-top: 9px;
+                margin-bottom: 9px;
+            }
+            nav {
+                z-index: 199999;
+            }
+            select {
+                position: relative;
+                left: -66px;
+                margin: 5px;
+            }
+
+            .items {
+                display: flex;
+                flex-wrap: wrap;
+                /* width: 70%; */
+                height: fit-content;
+                /* float: right; */
+                position: relative;
+                /* left: 25%; */
+
+            }
+
+            .prod {
+                position: relative;
+                top: 1pc;
+                width: 43.6%;
+                left: 3.5%;
+                background-color: #af9331;
+                height: 24pc;
+                border-radius: 20px;
+                margin: 10px;
+
+            }
+
+            .items .prod p,
+            .items .prod h3,
+            .items .prod button {
+                position: relative;
+                /* left: 20%; */
+                text-align: center;
+                color: black;
+                /* align-items: center; */
+                width: 100%;
+                /* top: -5%; */
+            }
+            .prod img {
+                border-radius: 20px;
+                width: 18.3pc;
+                height: 17.5pc;
+            }
+            .items .prod button:hover {
+                background-color: black;
+                color: #AF9331;
+                cursor: pointer;
+            }
+
+            .items .prod button {
+                padding: 10px 30px 10px 30px;
+                border-radius: 20px;
+                border: none;
+                font-weight: bolder;
+                width: 50%;
+                position: relative;
+                top: 3.5%;
+                left: 25%;
+                margin-bottom: 20px;
+            }
+
+            p strong {
+                color: black;
+            }
+
+            nav .icons {
+                top: -32px;
+                position: relative;
+            }
+
+            nav input {
+                color: black;
+                position: relative;
+                top: -32px;
+            }
+
+            nav ul li {
+                top: -12px;
+                position: relative;
+            }
+
+            nav ul #mySelect {
+                position: relative;
+                top: -12px;
+            }
+
+            nav ul li,
+            nav .icons i,
+            nav .logo h2 {
+                color: white;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="items">
+        {% if results %}
+
+        <h3>Search Results:</h3>
+
+        {% for re in results %}
+        <div class="prod">
+            <img src="{{ re.image.url }}" alt="" />
+            <h3>{{ re.name }}</h3>
+            <p><strong>&#8358; {{ re.new_price|intcomma }}</strong></p>
+            <p><del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del></p>
+            <button  style="cursor: pointer;" onclick="location.href='{{ re.get_absolute_url }}'">Add to Cart</button>
+        </div>
+        {% endfor %}
+        {% else %}
+            <br>
+            <h3>No search results found.</h3>
+        {% endif %}
+    </div>
+
+    <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+{% endblock %}

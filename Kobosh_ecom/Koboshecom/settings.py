@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-cbgcc9jf3vyk%s7$j1ccnkx98*lu@nzt_w=*#3$nhbzd7s1qzt
 
 DEBUG = True
 
-# ALLOWED_HOSTS = ['emmy-ecommerce.herokuapp.com', 'project2.emmanuelnkereuwem.com.ng']
+ALLOWED_HOSTS = ['*']
 
 CART_SESSION_ID = 'cart'
 

@@ -1,1 +1,1 @@
-web gunicorn Koboshecom.wsgi:application --log-file -
+web: gunicorn Koboshecom.wsgi:application --log-file -

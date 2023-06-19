@@ -1,0 +1,222 @@
+
+
+.create p{
+    /* text-align: center; */
+    width: 70%;
+    font-size: 15px;
+    left:6%;
+    color: #AF9331;
+    z-index: 5;
+    position: relative;
+    
+
+
+}
+
+.messages li {
+    position: relative;
+    left: 0;
+    font-size: 17px;
+    text-align: center;
+    color: red;
+}
+#acc {
+    position: relative;
+    top: 90px;
+}
+label {
+    position: relative;
+    color: #AF9331;
+    /* left: 510px; */
+    top: 60px;
+
+}
+label strong {
+    color: #AF9331;
+
+}
+.create h2 {
+    width: 70%;
+    position: relative;
+    color: #AF9331;
+    left: -3%;
+    width: 100%;
+    top: 20px;
+    text-align: center;
+    font-size: 30px;
+}
+.account_create, #create_acc{
+  cursor: pointer;
+}
+input {
+  color: black;
+}
+#h2_id {
+  position: relative;
+  top: 30px;
+  left: 9px;
+  border: 1.5px solid #AF9331;
+}
+.account_create, #create_acc{
+    position: relative;
+    left: .1%;
+    color: white;
+    width: 96%;
+    font-size: 18px;
+    border: none;
+    top: 60px;
+    height: 37px;
+    background-color: #AF9331;
+}
+.create a {
+    color: blueviolet;
+    text-decoration: none;
+}
+.name {
+    text-align:justify;
+}
+.have {
+    position: relative;
+    width: 50%;
+    color: #AF9331;
+    left:3px;        
+    top: 92px;
+    font-size: 15px;
+}
+.forgot a {
+    position: relative;
+    width: 50%;
+    /* float: right; */
+    left:120%;        
+    top: 39px;
+    font-size: 15px;
+}
+
+.reset{
+    position: relative;
+    height:20pc;
+    top: 130px;
+}
+.all_forms {
+    display: flex;
+    flex-direction: column;
+    align-items: center;position: relative;
+    top: -1pc;
+    justify-content: center;
+  }
+  
+  .create {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    top: 8pc;
+    overflow: hidden;
+    position: relative;
+    color: #AF9331;
+    box-shadow: 2px 2px 4px rgba(159, 37, 37, 0.2);
+    border: 1px solid #ccc;
+  }
+  
+
+.all_forms .create input {
+  width: 90%;
+  padding: 10px;
+  border-radius: 5px;
+  border: .1px solid black;
+  margin-bottom: 10px;
+  }
+  .all_forms .create input:focus {
+    color: black;
+    outline: none;
+  }
+
+  .all_forms .create input[type='submit']{
+    color: black;
+    border: none;
+    font-weight: bolder;
+  }
+  .bottom p {
+    font-weight: bolder;
+  }
+  .bottom {
+    margin-bottom: 30%;
+    margin-top: 10%;
+    height: 7pc;
+  }
+ 
+  .bottom p {
+    text-align: center;
+    width: 87%;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    top: 50%;
+    font-size: 14px;
+}
+#create_acc{
+    background-color: rgba(236, 229, 229, 0.527);
+    color: #AF9331;
+    border: 1px solid black;
+    font-weight: bolder;
+    
+}
+#forgotpass{
+    float: right;
+    position: relative;
+    left: -17px;
+    text-decoration: underline;
+}
+
+
+@media screen and (max-width:767px) {
+  .create {
+      width: 80%;
+      position: relative;
+      /* left: 21px; */
+  }
+  .create h2 {
+      font-size: 22px;
+  }
+  input[type='submit']{
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+footer .foot_head .newsletter input[type='submit'] { 
+  position: relative;
+  top: 20px;
+
+}
+}
+@media only screen and (min-width: 1024px) {
+select {
+  width: 12%;
+  position: relative;
+  top: -7px;
+  line-height: 30px;
+  height: 35px;
+  left: -10px;
+  border: none;
+  background-color: #AF9331;
+  font-weight: bolder;
+  color: white;
+  padding-left: 22px;
+  font-size: 16px;
+  cursor: pointer;
+  left: 23%;
+  border-radius: 20px;
+}
+select option {
+  background-color: #AF9331;
+  position: relative;
+  border-radius: 20px;
+  color: white;
+  font-size: 14;
+  height: 50px;
+  font-weight: bolder;
+}
+select:focus {
+  outline: none;
+}
+}

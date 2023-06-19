@@ -1,0 +1,256 @@
+        .wrapper {
+            height: 75pc;
+        }
+        strong{
+            color: black;
+        }
+        nav ul li {
+            font-size: 16px;
+        }
+        #subtle{
+            position: relative;
+            top: 19px;
+            font-size: 14px;
+        }
+        .bt_right h3,.bt_right hr, .bt_middle ul li a {
+            position: relative;
+            top: -11px;
+        }
+        .bt_right ul li a {
+            position: relative;
+            top: -18px;
+        }
+        .bt_right h3 {
+            /* top: -20px; */
+            z-index: 530;
+        }
+        nav ul li:nth-child(3) {
+            color: black;
+            font-size:18px;
+        }
+        .container {
+            background-color: white;
+            align-items: center;
+            
+        }
+        .container input[type='text']:focus {
+            outline: #af9331;
+            box-shadow: 0 0 5px #af9331;
+            border: 1px solid #af9331;
+        }
+        footer {
+            position: relative;
+            top: 150px;
+        }
+        
+        select option:hover {
+            background-color: #af9331;
+        }
+        select option {
+            color: black;
+        }
+        /* images*/
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        .hand {
+            cursor: pointer;
+            cursor: pointer;
+        }
+
+        .cards {
+            padding-left: 0;
+        }
+
+        .col-md-12 .cards li {
+            -webkit-transition: all .2s;
+            -moz-transition: all .2s;
+            -ms-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+            background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+            background-position: 0 0;
+            float: left;
+            height: 32px;
+            margin-right: 8px;
+            text-indent: -9999px;
+            width: 51px;
+        }
+
+        .col-md-12 .cards .mastercard {
+            background-position: -51px 0;
+        }
+
+        .col-md-12 .cards li {
+            -webkit-transition: all .2s;
+            -moz-transition: all .2s;
+            -ms-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+            background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+            background-position: 0 0;
+            float: left;
+            height: 32px;
+            margin-right: 8px;
+            text-indent: -9999px;
+            width: 51px;
+        }
+
+        .col-md-12 .cards .amex {
+            background-position: -102px 0;
+        }
+
+        .col-md-12 .cards li {
+            -webkit-transition: all .2s;
+            -moz-transition: all .2s;
+            -ms-transition: all .2s;
+            -o-transition: all .2s;
+            transition: all .2s;
+            background-image: url('//c2.staticflickr.com/4/3713/20116660060_f1e51a5248_m.jpg');
+            background-position: 0 0;
+            float: left;
+            height: 32px;
+            margin-right: 8px;
+            text-indent: -9999px;
+            width: 51px;
+        }
+
+        .col-md-12 .cards li:last-child {
+            margin-right: 0;
+        }
+
+        /* images end */
+
+
+
+        /*
+ * BOOTSTRAP
+ */
+        .container {
+            border: none;
+        } 
+        .btn {
+            border: 1px solid #af9331;
+            background-color: #af9331;
+            border-radius: 1px;
+        }
+        .btn:hover{
+            background-color: #af9331;
+            border: 1px solid black;
+        }
+
+        .btn-sm,
+        .btn-group-sm>.btn {
+            border-radius: 1px;
+        }
+
+        .input-sm,
+        .form-horizontal .form-group-sm .form-control {
+            border-radius: 1px;
+        }
+
+        .panel-info {
+            border-color: #af9331;
+        }
+
+        .panel-heading {
+            border-top-left-radius: 1px;
+            border-top-right-radius: 1px;
+        }
+
+        .panel {
+            border-radius: 1px;
+        }
+
+        .panel-info>.panel-heading {
+            color: #ffffff;
+            border-color: #af9331;
+        }
+
+        .panel-info>.panel-heading {
+            background-image: linear-gradient(to bottom, #af9331 0px, #af9431d9 100%);
+        }
+
+        hr {
+            border-color: #af9331 -moz-use-text-color -moz-use-text-color;
+        }
+
+        .panel-footer {
+            border-bottom-left-radius: 1px;
+            border-bottom-right-radius: 1px;
+            border-top: 1px solid #af9331;
+        }
+
+        .btn-link {
+            color: #ffffff;
+        }
+
+        hr {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .center {
+            position: relative;
+            left: 15%;
+            top: 5pc;
+            width: 115%;
+        }
+
+        /** MEDIA QUERIES **/
+        @media only screen and (max-width: 989px) {
+            .span1 {
+                margin-bottom: 15px;
+                clear: both;
+            }
+        }
+
+        @media only screen and (max-width: 764px) {
+            .inverse-1 {
+                float: right;
+            }
+        }
+
+        @media only screen and (max-width: 586px) {
+            .cart-titles {
+                display: none;
+            }
+
+            .panel {
+                margin-bottom: 1px;
+            }
+        }
+
+        .form-control {
+            border-radius: 1px;
+        }
+
+        @media only screen and (max-width: 486px) {
+            .col-xss-12 {
+                width: 100%;
+            }
+
+            .center {
+                position: relative;
+                left: -20px;
+            }
+
+            .cart-img-show {
+                display: none;
+            }
+
+            .btn-submit-fix {
+                background-color: #af9331;
+                width: 100%;
+            }
+
+        }
+
+        /*
+@media only screen and (max-width: 777px){
+    .container{
+        overflow-x: hidden;
+    }
+}*/

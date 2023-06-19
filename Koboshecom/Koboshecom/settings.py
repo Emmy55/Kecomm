@@ -91,7 +91,7 @@ DATABASES = {
         'NAME': 'ecom',
         'USER': 'root',
         'PASSWORD': 'Udoemma$5',
-        'HOST': 'localhost',
+        'HOST': 'DESKTOP-BBD9JRT',
         'PORT': '3306',
     }
 }

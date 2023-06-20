@@ -35,9 +35,7 @@
         <li id="dt" class="onhover"   | escapejs>CATEGORIES <i class="fa-solid fa-chevron-down"></i></li> 
 
       <div name="" id="mySelect" >
-        {% for c in categories %}
-        <div id="list" onclick='location.href="{{ c.get_absolute_url }}"' | escapejs>{{ c.name }}</div>
-        {% endfor %}
+       
       </div>
       </div>
 

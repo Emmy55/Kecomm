@@ -63,13 +63,6 @@
 
   <div class="all_category">
 
- {% for c in categories %}
- <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
-      <h3>{{ c.name }}</h3>
-    </div>
- {% endfor %}
-
  
   </div>
   <i class="fa-solid fa-chevron-right" id="next"></i>
@@ -82,38 +75,7 @@
   </div>
 
   <div class="all_product">
-    {% for product in products %}
-      
-      <div class="animated product">
-    <div class="swiper">
-
-      <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
-  
-        <div class="swiper-slide">
-          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
-            static "img/no_image.png" %}{% endif %}" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="{% if product.image1 %}{{ product.image1.url }}{% else %}{% 
-            static "img/no_image.png" %}{% endif %}" alt="">
-        </div>
-        <div class="swiper-slide">
-          <img src="{% if product.image2 %}{{ product.image2.url }}{% else %}{% 
-            static "img/no_image.png" %}{% endif %}" alt="">
-        </div>
-      </div>
-  
-        <div class="ab">
-        <div class="swiper-pagination down"></div>
-
-          <h3>{{ product.name }}</h3>
-          <del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del>
-          <p>&#8358; {{ product.new_price|intcomma }}</p>
-        </div>
-
-    </div>
-    </div>
- {% endfor %}
+   
 
   </div>
 </div>
@@ -161,12 +123,7 @@
   </div>
   <div class="all_store">
 
-    {% for c in categories %}
-    <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
-         <h3>{{ c.name }}</h3>
-       </div>
-    {% endfor %}
+   
   </div>
 </div>
 <script src="{% static 'kobosh/modern.js' %}"></script>

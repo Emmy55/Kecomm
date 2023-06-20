@@ -88,7 +88,7 @@ WSGI_APPLICATION = "Koboshecom.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Ecommerce_db',
+        'NAME': 'ecommerce_db',
         'USER': 'root',
         'PASSWORD': 'Udoemma$5',
         'HOST': 'localhost',

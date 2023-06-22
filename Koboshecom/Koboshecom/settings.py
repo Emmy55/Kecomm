@@ -73,7 +73,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-            ],
+            # ],
         },
     },
 ]
@@ -94,6 +94,14 @@ DATABASES = {
         'HOST': 'localhost',
         'PORT': '3306',
     }
+}
+import dj_database_url
+
+# ...
+
+# Replace the existing DATABASES configuration with the following:
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('mysql://root:Udoemma$5@localhost:3306/ecommerce_db'))
 }
 
 

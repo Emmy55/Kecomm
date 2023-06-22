@@ -677,7 +677,7 @@
     }
 
     .foot_bottom ul li {
-        background: url('bullet_point.png');
+        background: url("bullet_point.cb0af638b83f.png");
         background-size: 20px 20px;
         position: relative;
         line-height: 1.3;
@@ -1565,7 +1565,7 @@
 
     .foot_bottom ul li {
         /* padding-left: 20px; */
-        background: url('bullet_point.png');
+        background: url("bullet_point.cb0af638b83f.png");
         background-size: 20px 20px;
         position: relative;
         /* margin-left: 50px; */
@@ -2420,7 +2420,7 @@
      }
     footer .foot_bottom ul li {
         padding-left: 20px;
-        background: url('bullet_point.png');
+        background: url("bullet_point.cb0af638b83f.png");
         background-size: 20px 20px;
         position: relative;
         display: flex;

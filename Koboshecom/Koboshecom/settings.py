@@ -92,14 +92,11 @@ DATABASES = {
         'NAME': 'ecommerce_db',
         'USER': 'root',
         'PASSWORD': 'Udoemma$5',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
 
-
-# Update the DATABASES configuration to use dj_database_url
-DATABASES['default'] = dj_database_url.config(default=os.environ.get('mysql://root:Udoemma$5@localhost:3306/ecommerce_db'))
 
 
 

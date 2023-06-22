@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os 
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -73,7 +74,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-             ],
+            ],
         },
     },
 ]
@@ -95,14 +96,11 @@ DATABASES = {
         'PORT': '3306',
     }
 }
-import dj_database_url
 
-# ...
 
-# Replace the existing DATABASES configuration with the following:
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('mysql://root:Udoemma$5@localhost:3306/ecommerce_db'))
-}
+# Update the DATABASES configuration to use dj_database_url
+DATABASES['default'] = dj_database_url.config(default=os.environ.get('mysql://root:Udoemma$5@localhost:3306/ecommerce_db'))
+
 
 
 # Password validation

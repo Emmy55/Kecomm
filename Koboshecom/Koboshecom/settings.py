@@ -141,10 +141,10 @@ STATICFILES_DIRS = [BASE_DIR / "static/kobosh"] # new
 STATIC_ROOT = BASE_DIR / "Koboshecom/staticfiles" # new
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
+# STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-
-MEDIA_URL = 'media/'
+MEDIA_URL = 'Koboshecom/media/'
 MEDIA_ROOT = BASE_DIR / 'Koboshecom/media/'
 
 # Default primary key field type

@@ -1,0 +1,256 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Space+Mono:700");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+.center-wrapper {
+  padding: 0.5rem;
+  display: flex;
+  margin-top: 30px;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
+}
+
+.content {
+  margin: 0 auto;
+  padding:10px;
+  max-width: 600px;
+  border: 1px solid rgb(233, 212, 23);
+  margin-top: 5%;
+  border-radius: 20px;
+  background: white;
+}
+
+.top-bar,
+.bag,
+.bag-total,
+.help {
+  padding: 0.5rem 1rem;
+}
+
+/* a,
+.btn-go-checkout {
+  color: white;
+} */
+
+#arrow {
+  display: none;
+}
+
+.logo {
+  font-family: "Space Mono", sans-serif;
+}
+
+.logo,
+button {
+  text-transform: uppercase;
+}
+
+.fa-search,
+.fa-arrow-left,
+.fa-lock {
+  margin-right: 1rem;
+}
+
+/* .top-bar,
+.bag-head::after,
+.bag-total::before {
+  background: whitesmoke;
+} */
+
+.bag-head::after,
+.bag-total::before,
+.btn-remove {
+  display: block;
+}
+
+.bag-head::after,
+.bag-total::before,
+.description-text,
+.promo-checkbox {
+  margin: 0.5rem 0;
+}
+
+.bag-head::after,
+.bag-total::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+}
+
+.muted {
+  color: grey;
+}
+
+::-moz-placeholder {
+  font-size: 0.8rem;
+}
+
+:-ms-input-placeholder {
+  font-size: 0.8rem;
+}
+
+.change-delivery,
+::placeholder,
+.product-code,
+.help {
+  font-size: 0.8rem;
+}
+
+.description h1  {
+  font-size: 0.9rem;
+}
+.description p  {
+  font-size: 0.9rem;
+}
+
+.description h2 {
+  font-size: 1rem;
+}
+
+.bag-product .description h1,
+.bag-product .description p,
+.bag-product .description h2,
+.bag-product .description label,
+.bag-total p,
+.bag-total h3,
+.bag-total .promo-checkbox label {
+  color: rgb(0, 0, 0);
+
+}
+
+.image {
+  width: 36%;
+  position: relative;
+  left: 2%;
+}
+
+.image img.product-image {
+  max-width: 80%;
+  height:80%;
+}
+
+.description {
+  padding-right: 1rem;
+  width: 60%;
+}
+
+select {
+  padding: 0.3rem;
+  width: 60px;
+}
+
+select,
+button,
+input[type=text] {
+  height: 40px;
+}
+button {
+  border: none;
+}
+.quantity-wrapper button {
+  cursor: pointer;
+  width: 100px;
+  color: black;
+  background: none;
+  border: 2px solid #000000;
+  border-radius: 4px;
+}
+
+.quantity-wrapper {
+  align-items: flex-start;
+  flex-flow: row wrap;
+  margin: 1rem 0 0.5rem;
+}
+
+select {
+  width: 50px;
+  margin-right: 1rem;
+}
+
+.bag-product,
+.quantity-wrapper,
+.subtotal,
+.delivery,
+.total,
+.promo-code {
+  display: flex;
+  justify-content: space-between;
+}
+
+.subtotal,
+.delivery,
+input[type=checkbox],
+.help {
+  margin-bottom: 0.5rem;
+}
+
+.total {
+  margin-bottom: 1rem;
+}
+
+.change-delivery {
+  color: #AF9331;
+}
+
+input[type=text],
+.btn-go-checkout {
+  font-size: 1rem;
+}
+
+input[type=text] {
+  width: calc(100% - 100px - 1rem);
+  padding: 0.5rem;
+}
+
+.btn-go-checkout {
+  margin-top: 1rem;
+  width: 100%;
+  height: 40px;
+  background: #AF9331;
+  box-shadow: 0 3px 6px 2px gainsboro;
+}
+
+.help {
+  text-align: center;
+}
+.quantity-wrapper label {
+  font-size: 0.9rem;
+}
+@media only screen and (max-width: 767px) {
+  .content {
+    margin: 0 auto;
+    padding:10px;
+    max-width: 600px;
+    border: 1px solid rgb(233, 212, 23);
+    margin-top: 5%;
+    border-radius: 20px;
+    background: white;
+    position: relative;
+    top: 2pc;
+  }
+  .quantity-wrapper label {
+    font-size: 0.7rem;
+  }
+  .image img.product-image {
+    max-width: 100%;
+    height:65%;
+  }
+  .description p  {
+    font-size: 10px;
+  }
+  
+  .description h1 {
+    font-size: 12px;
+  }
+  .description h2 {
+    font-size: 12px;
+  }
+}

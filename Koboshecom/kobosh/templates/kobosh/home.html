@@ -90,7 +90,7 @@
       <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
   
         <div class="swiper-slide">
-          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
+          <img src="{% if product.image %}{{ product.imageURL }}{% else %}{% 
             static "img/no_image.png" %}{% endif %}" alt="">
         </div>
         <div class="swiper-slide">

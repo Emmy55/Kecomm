@@ -88,16 +88,16 @@ WSGI_APPLICATION = "Koboshecom.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'ecommerce_db',
-        'USER': 'root',
-        'PASSWORD': 'Udoemma$5',
-        'HOST': '127.0.0.1',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dd4dlctkinu4or',
+        'USER': 'dgbrblrkbzimux',
+        'PASSWORD': '37d88fb8661ac591cbe570559306ac34f78419c10d350bbeba7f55b2ac854d5b',
+        'HOST': 'ec2-54-208-11-146.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
-
+                                              
 
 
 # Password validation

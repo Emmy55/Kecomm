@@ -65,7 +65,7 @@
 
  {% for c in categories %}
  <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="Koboshecom{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
+      <img onclick='location.href="{{ c.get_absolute_url }}"' src="Koboshecom{{ c.image.url }}" alt="" />
       <h3>{{ c.name }}</h3>
     </div>
  {% endfor %}

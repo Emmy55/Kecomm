@@ -65,7 +65,7 @@
 
  {% for c in categories %}
  <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
+      <img onclick='location.href="Koboshecom/{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
       <h3>{{ c.name }}</h3>
     </div>
  {% endfor %}
@@ -90,7 +90,7 @@
       <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
   
         <div class="swiper-slide">
-          <img src="{% if product.image %}{{ product.imageURL }}{% else %}{% 
+          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
             static "img/no_image.png" %}{% endif %}" alt="">
         </div>
         <div class="swiper-slide">

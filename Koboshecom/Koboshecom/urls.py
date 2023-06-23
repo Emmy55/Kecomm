@@ -28,7 +28,7 @@ urlpatterns = [
     path('members/', include('members.urls', namespace='members')), 
     path('', include('kobosh.urls', namespace='kobosh')),
 
-    path(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    path(r'^Koboshecom/media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
 

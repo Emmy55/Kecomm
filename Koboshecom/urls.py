@@ -22,12 +22,12 @@ from django.views.static import serve
 
 
 urlpatterns = [
+    path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
     path("admin/", admin.site.urls),
     path('cart/', include('cart.urls', namespace='cart')), 
     path('members/', include('django.contrib.auth.urls')),
     path('members/', include('members.urls', namespace='members')), 
     path('', include('kobosh.urls', namespace='kobosh')),
-    path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
     path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
 ]
 

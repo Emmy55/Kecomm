@@ -89,7 +89,7 @@ WSGI_APPLICATION = "Koboshecom.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dd4dlctkinu4or',
+        'NAME': 'd6p8ql4k7futq7',
         'USER': 'ayjzjrmlesbaar',
         'PASSWORD': '158516e434e094a17d54bbe4f29d753113b07e605b132769d0242cc93303fa1c',
         'HOST': 'ec2-44-199-147-86.compute-1.amazonaws.com',

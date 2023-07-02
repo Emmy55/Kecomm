@@ -13,7 +13,10 @@
       overflow: hidden;
     }
 
-   
+    .burger {
+      width: 18px;
+      z-index: 9999;
+    }
     #mySelect {
       color: #000000;
       font-size:18px;

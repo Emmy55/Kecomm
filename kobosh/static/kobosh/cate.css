@@ -3,12 +3,13 @@
       margin: 0;
       padding: 0;
     }
+   
     .left_side {
       height: 190vh;
       width: 70%;
       overflow-y: scroll;
       position: fixed;
-      z-index: 40;
+      z-index: -1;
       top: 0;
       overflow: hidden;
     }
@@ -40,7 +41,7 @@
       right: 0;
       /* height: 60pc; */
       width: 165%;
-      text-align: center;
+      /* text-align: center; */
       transition: .5s all;
       clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
     }
@@ -77,12 +78,12 @@
   
     .hamburger {
       position: absolute;
-      display: block;
       background-color: #AF9331;
       z-index: 90;
       padding: 12px;
       top: 10pc;
       font-size: 30px;
+      display: none;
     }
       
     .links a {
@@ -213,6 +214,16 @@
 }
   html {
     scroll-behavior: smooth;
+  }
+  nav {
+    z-index: 9999;
+  }
+  .burger, h2 {
+    z-index: 40000;
+
+  }
+  .links, .left_side {
+    z-index: -2;
   }
   }
 

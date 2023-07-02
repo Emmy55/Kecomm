@@ -24,6 +24,7 @@
       color: #000000;
       font-size:18px;
     }
+    
 </style>
 </head>
 
@@ -88,27 +89,40 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="{% static 'kobosh/swiper.js' %}"></script>
 
-
   <script>
-    btn = document.querySelector('.hamburger');
-    body = document.querySelector("body")
-    navlist = document.querySelector("ul a");
-
-    bod = document.querySelector("#head");
-
-    btn1 = document.querySelector(".burger1");
-
-    btn.addEventListener("click", () => {
-      navlist.classList.toggle("clipped").checked;
-    });
-    ul = document.getElementById("hamburger");
-
-    ul.addEventListener("click", () => {
-      navlist.classList.toggle("clipped").checked = false;
-    });
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+  var body = document.querySelector('body');
+  
+  
+  
+  
+  
+  
+  btn = document.querySelector(".burger");
+  
+  navlist = document.querySelector("ul");
+  
+  bod = document.querySelector("#head");
+  
+  btn1 = document.querySelector(".burger1");
+  
+  
+  btn.addEventListener("click", (event) => {
+    btn.innerHTML = btn.innerHTML.includes("fa-xmark")
+      ? `<i class="fa-solid fa-bars"></i>`
+      : `<i class="fa-sharp fa-solid fa-xmark"></i>`;
+        navlist.classList.toggle("clipped").checked;
+        event.stopPropagation();
+  
+  });
+  
+  // body.addEventListener("click", (event) => {
+  //       event.stopPropagation();
+  
+  //     navlist.classList.toggle("clipped").checked = false;
+  // });
+  
   </script>
-
-
   
 
   <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>

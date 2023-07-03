@@ -296,7 +296,7 @@
 
         {% for re in results %}
         <div class="prod">
-            <img src="{{ re.image.url }}" alt="" />
+            <img src="{{ re.image }}" alt="" />
             <h3>{{ re.name }}</h3>
             <p><strong>&#8358; {{ re.new_price|intcomma }}</strong></p>
             <p><del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del></p>

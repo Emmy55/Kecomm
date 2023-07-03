@@ -21,7 +21,7 @@ class Category(models.Model):
 
     name = models.CharField(max_length=200)
 
-    image = models.CharField(max_length=200)
+    image = models.URLField(max_length=200)
 
     slug = models.SlugField(max_length=200,
                             unique=True)
@@ -48,11 +48,11 @@ class Product(models.Model):
                                  on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200)
-    image = models.CharField(max_length=200)
+    image = models.URLField(max_length=200)
 
-    image1 = models.CharField(max_length=200)
+    image1 = models.URLField(max_length=200)
 
-    image2 = models.CharField(max_length=200)
+    image2 = models.URLField(max_length=200)
                               
     description = models.TextField(blank=True, max_length=200)
     old_price = CommaSeparatedIntegerField(max_digits=10, decimal_places=0, null=True)

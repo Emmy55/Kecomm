@@ -77,7 +77,7 @@
         <h3>{{ product.name }}</h3>
         <p><strong class="price"> &#8358; {{ product.new_price|intcomma }}</strong></p>
 
-        <p><del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del></p>
+        <p id="old_pric"><del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del></p>
 
         <button onclick="location.href='{{ product.get_absolute_url }}'">Add to Cart</button>
       </div>

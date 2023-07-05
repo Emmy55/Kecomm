@@ -85,7 +85,7 @@
       font-size: 30px;
       display: none;
     }
-      
+    
     .links a {
       text-decoration: none;
       color: rgb(0, 0, 0);
@@ -106,7 +106,7 @@
 
 
 
-
+    
     
 
   .links a:hover {
@@ -143,7 +143,7 @@
   }
   .all .prod {
     background-color: #af9331;
-    height: 15pc;
+    height: 16pc;
     border-radius: 20px;
     width: 43%;
     margin: 10px;
@@ -173,17 +173,22 @@
   }
 
   .all .prod button {
-    height: 12%;
+    height: 10%;
     color: black;
     border-radius: 10px;
     border: none;
     font-weight: bolder;
-    width: 53%;
+    width: 48%;
     position: relative;
-    left: 24%;
-    top: 7px;
+    left: 4%;
+    top: -37px;
     font-size: 12px;
     /* text-align: center; */
+  }
+  #old_pric {
+    position: relative;
+    top: -90px;
+    z-index: 190999;
   }
 
   .all img {
@@ -225,6 +230,29 @@
   .links, .left_side {
     z-index: -2;
   }
+    .all .prod h3,
+      .all .prod del,
+      .all .prod .down,
+      .all .prod p,
+      .all .prod button {
+        position: relative;
+        /* left: 20%; */
+        text-align: center;
+        z-index: 9999;
+        color: black;
+        /* align-items: center; */
+        width: 100%;
+        top: -33%;
+      }
+      .all .prod button {
+        position: relative;
+        top: -35%;
+      }
+      .swiper-wrapper  {
+        left: 8.5%;
+        position: relative;
+        width: 102%;
+      }
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px) {

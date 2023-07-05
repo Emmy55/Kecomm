@@ -54,7 +54,7 @@ class Product(models.Model):
 
     image2 = models.URLField(max_length=200)
                               
-    description = models.TextField(blank=True, max_length=200)
+    description = models.TextField(blank=True, max_length=250)
     old_price = CommaSeparatedIntegerField(max_digits=10, decimal_places=0, null=True)
     new_price = models.DecimalField(max_digits=10, decimal_places=0, null=True)
     def formatted_price(self):

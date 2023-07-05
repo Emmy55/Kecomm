@@ -417,7 +417,8 @@
     .copyright{
       position: relative;
       top: 95px;
-      height: 20px;
+    z-index: -31;
+    height: 20px;
     }
     #arrow {
       top: -23px;

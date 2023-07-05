@@ -13,6 +13,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
+    <link rel="stylesheet" href="{% static 'kobosh/modern.css' %}">
     <title>Details</title>
     <style>
 
@@ -20,10 +22,16 @@
             .right_des {
                 position: relative;
                 width: 50%;
-                top: -15pc;
+                top: -14pc;
                 float: right;
             }
-
+            .right_des h2,
+            .right_des p,
+            .des,
+            select,
+            option {
+                color: black;
+            }
             .items {
                 width: 81%;
                 position: relative;
@@ -34,7 +42,7 @@
                 font-size: 12px;
                 padding-bottom: 50px;
                 border-radius: 25px;
-                margin-bottom: 170px;
+                margin-bottom: 320px;
             }
 
             .items_img {
@@ -44,7 +52,7 @@
 
             .items .des {
                 position: relative;
-                top: 7pc;
+                top: 8pc;
                 width: 200%;
                 right: 98%;
             }
@@ -91,7 +99,7 @@
                 border: 1px solid rgb(233, 212, 23);
                 padding: 15px;
                 left: 25%;
-                margin-bottom:200px;
+                margin-bottom:100px;
                 height: 25pc;
                 border-radius: 20px;
             }
@@ -188,9 +196,14 @@
                 <input style="cursor: pointer;" type="submit" name="" id="" value="Add to Cart">
             </form>
         </div>
-    </div>z
+    </div>
+
+
+  
     <script src="https://kit.fontawesome.com/9da17deac8.js" crossorigin="anonymous"></script>
+    <script src="{% static 'kobosh/swiper.js' %}"></script>
 </body>
 
 </html>
 {% endblock %}
+

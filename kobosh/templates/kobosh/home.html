@@ -77,7 +77,7 @@
 
 <div class="middle">
   <div class="top_middle">
-      <h4>See All <i class="fa-solid fa-arrow-right-long"></i></h4>
+      <h4 onclick="location.href='{% url 'kobosh:cate' %}'">See All <i class="fa-solid fa-arrow-right-long"></i></h4>
       <h3>New Arrival</h3>
   </div>
 
@@ -138,8 +138,8 @@
     <img src="discount3.png" alt="">
   </div> -->
 </div>
-<img id="all_img" src="all_image.png" alt="" />
-<img id="all_img1" src="all_image1.png" alt="">
+<img id="all_img" src="{% static 'kobosh/multiplead.png' %}" alt="" />
+<img id="all_img1" src="{% static 'kobosh/multiplead1.png' %}" alt="">
 
 
 

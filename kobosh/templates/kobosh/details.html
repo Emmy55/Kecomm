@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Details</title>
     <style>
-        
+
         @media screen and (min-device-width: 0) and (max-device-width: 767px) {
             .right_des {
                 position: relative;
@@ -172,7 +172,7 @@
    
     <div class="items">
         <div class="items_img">
-            <img src="{% if product.image %}{{ product.image.url }}{% else %}
+            <img src="{% if product.image %}{{ product.image }}{% else %}
             {% static 'img/no_image.png' %}{% endif %}" alt="">
         </div>
 

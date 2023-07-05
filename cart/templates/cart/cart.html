@@ -125,7 +125,7 @@ nav input {
 			{% with product=item.product %}
 			<div class="bag-product">
 				<div class="image">
-					<img onclick="location.href='{{ product.get_absolute_url }}' " src="{% if product.image %}{{ product.image.url }}
+					<img onclick="location.href='{{ product.get_absolute_url }}' " src="{% if product.image %}{{ product.image }}
 			{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
 				</div>
 				<div class="description">

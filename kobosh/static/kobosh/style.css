@@ -461,6 +461,7 @@
         position: relative;
         left: 3%;
         top: -5pc;
+        width: 96%;
     }
 
     .discount_shop h1,
@@ -594,7 +595,7 @@
         margin-top: 13px;
     }
 
-    .newsletter input[type='email'] {
+    .foot_head .newsletter input[type='email'] {
         height: 46px;
         border: none;
         width: 50%;
@@ -609,7 +610,8 @@
 
     #form {
         position: relative;
-        left: -10px;
+        left: -42px;
+        width: 115%;
     }
 
     .newsletter input[type='submit'] {
@@ -620,7 +622,7 @@
         width: 29%;
         font-size: 10px;
         top: 20px;
-        left: 1px;
+        left: -5px;
         position: relative;
         background-color: #AF9331;
         float: right;
@@ -1326,7 +1328,7 @@
     .discount {
         width: 93%;
         height: 300px;
-        margin-bottom: 10px;
+        margin-bottom: 150px;
         position: relative;
         /* top: -13pc; */
         left: 3.4%;
@@ -1343,11 +1345,11 @@
         background-color: #AF9331;
     }
 
-    #all_img {
+    #all_img1 {
         display: none;
     }
 
-    #all_img1 {
+    #all_img {
         position: relative;
         left: 3%;
         top: -5pc;
@@ -1402,7 +1404,6 @@
         width: 93%;
         position: relative;
     }
-
     .all_store {
         display: flex;
         flex-wrap: wrap;

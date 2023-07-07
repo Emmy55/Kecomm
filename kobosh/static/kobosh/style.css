@@ -2072,10 +2072,12 @@
         scrollbar-width: none;
         overflow: hidden;
         overflow-x: scroll;
+        width: 55pc;
+        height:15pc;
     }
 
     .all_category img {
-        /* height:15pc; */
+        
         border-radius: 6px;
     }
 

@@ -247,7 +247,7 @@
                 font-weight: bolder;
                 width: 50%;
                 position: relative;
-                top: 3.5%;
+                /* top: 3.5%; */
                 left: 25%;
                 margin-bottom: 20px;
             }
@@ -257,14 +257,14 @@
             }
 
             nav .icons {
-                top: -32px;
+                /* top: -32px; */
                 position: relative;
             }
 
             nav input {
                 color: black;
                 position: relative;
-                top: -32px;
+                /* top: -32px; */
             }
 
             nav ul li {
@@ -299,7 +299,7 @@
             <img src="{{ re.image }}" alt="" />
             <h3>{{ re.name }}</h3>
             <p><strong>&#8358; {{ re.new_price|intcomma }}</strong></p>
-            <p><del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del></p>
+            <p><del><sub style="color: black;">&#8358; {{ re.old_price }}</sub></del></p>
             <button  style="cursor: pointer;" onclick="location.href='{{ re.get_absolute_url }}'">Add to Cart</button>
         </div>
         {% endfor %}

@@ -121,66 +121,71 @@ nav input {
 <div class="center-wrapper">
 	<div class="content">
 		<form action="{% url 'kobosh:payment' %}" id="myForm">
-			{% for item in cart %}
-			{% with product=item.product %}
-			<div class="bag-product">
-				<div class="image">
-					<img onclick="location.href='{{ product.get_absolute_url }}' " src="{% if product.image %}{{ product.image }}
-			{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
-				</div>
-				<div class="description">
-					<h1>{{ product.name }}</h1>
-					<p class="description-text">{{ product.description }}</p>
-					<!-- <p style="margin-bottom: 0.5rem;">One Size</p> -->
-					<h2>&#8358; {{ item.new_price|intcomma }}</h2>
-					<div class="quantity-wrapper">
-						<div>
-							<label for="quantity" style="margin-right: 0.5rem;">Quantity: {{ item.quantity }}</label>
-						</div>
-						<form action="{% url "cart:cart_remove" product.id %}" method="post">
-							<button type="submit" class="btn-remove">Remove</button>
-							{% csrf_token %}
-						</form>
-					</div>
-				</div>
-			</div>
-			{% endwith %}
-			{% endfor %}
-			<div class="bag-total">
-				<div class="subtotal">
-					<p class="small">Subtotal:</p>
-					<p class="small">NGN {{ cart.get_total_price }}</p>
-				</div>
-				<div class="delivery">
-					<p class="small">Delivery (Standard - 2 working days):<br>
-						<span class="change-delivery">Change delivery method</span>
-					</p>
-					<p class="small">Free</p>
-				</div>
-				<div class="total">
-					<h3>Total:</h3>
-					<h3>NGN {{ cart.get_total_price }}</h3>
-				</div>
-				<!-- <div class="promo-checkbox">
-			<input type="checkbox" name="promo-check">
-			<label for="promo-check">I have a promo code</label>
-		</div>
-		<div class="promo-code">
-			<input type="text" name="promo-checkbox" placeholder="Enter your promo code here" checked>
-			<button class="apply">Apply</button>
-		</div> -->
-				<button type="submit" class="btn-go-checkout">
-					<i class="fas fa-lock"></i>
-					<span>Go to Checkout</span>
-				</button>
-			</div>
-		</form>
+            {% for item in cart %}
+                {% with product=item.product %}
+                    <div class="bag-product">
+                        <div class="image">
+                            <img onclick="location.href='{{ product.get_absolute_url }}'" src="{% if product.image %}{{ product.image }}{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
+                        </div>
+                        <div class="description">
+                            <h1>{{ product.name }}</h1>
+                            <p class="description-text">{{ product.description }}</p>
+                            <h2>&#8358; {{ item.new_price|intcomma }}</h2>
+                            <div class="quantity-wrapper">
+                                <div>
+                                    <label for="quantity" style="margin-right: 0.5rem;">Quantity: {{ item.quantity }}</label>
+                                </div>
+                                <button type="button" class="btn-remove" data-product-id="{{ product.id }}">Remove</button>
+                            </div>
+                        </div>
+                    </div>
+                {% endwith %}
+            {% endfor %}
+                
+
+<div class="bag-total">
+    <div class="subtotal">
+        <p class="small">Subtotal:</p>
+        <p class="small">NGN {{ cart.get_total_price }}</p>
+    </div>
+    <div class="delivery">
+        <p class="small">Delivery (Standard - 2 working days):<br>
+            <span class="change-delivery">Change delivery method</span>
+        </p>
+        <p class="small">Free</p>
+    </div>
+    <div class="total">
+        <h3>Total:</h3>
+        <h3>NGN {{ cart.get_total_price }}</h3>
+    </div>
+
+                <button type="submit" class="btn-go-checkout">
+                    <i class="fas fa-lock"></i>
+                    <span>Go to Checkout</span>
+                </button>
+        </form>
+        
+        <!-- Separate form for item removal -->
+        <form id="removeForm" method="post" style="display: none;">
+            {% csrf_token %}
+        </form>
+        
 
 	</div>
 </div>
 <div class="bg"></div>
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $(".btn-remove").on("click", function() {
+            var productId = $(this).data("product-id");
+            $("#removeForm").attr("action", "{% url 'cart:cart_remove' 0 %}".replace("0", productId));
+            $("#removeForm").submit();
+        });
+    });
+</script>
 
 <script>
 

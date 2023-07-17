@@ -2067,12 +2067,12 @@
         position: relative;
         top: 2.5pc;
         left: 4%;
-        width: 92%;
+        width: 90%;
         height: 84%;
         scrollbar-width: none;
         overflow: hidden;
         overflow-x: scroll;
-        width: 55pc;
+        /* width: 55pc; */
         height:15pc;
     }
 

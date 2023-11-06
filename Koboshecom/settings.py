@@ -80,11 +80,11 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = "Koboshecom.wsgi.application"
+WSGI_APPLICATION = "Koboshecom.wsgi.application"
 
-WSGI_APPLICATION = 'vercel_app.wsgi.app'
+# WSGI_APPLICATION = 'vercel_app.wsgi.app'
 
-app = get_wsgi_application()
+# app = get_wsgi_application()
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

@@ -29,7 +29,8 @@ SECRET_KEY = "django-insecure-cbgcc9jf3vyk%s7$j1ccnkx98*lu@nzt_w=*#3$nhbzd7s1qzt
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+
 
 CART_SESSION_ID = 'cart'
 
@@ -79,8 +80,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "Koboshecom.wsgi.application"
+# WSGI_APPLICATION = "Koboshecom.wsgi.application"
 
+WSGI_APPLICATION = 'vercel_app.wsgi.app'
+
+app = get_wsgi_application()
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

@@ -1,54 +1,68 @@
         .wrapper {
-            height: 75pc;
+            height: 50pc;
         }
-        strong{
+
+        strong {
             color: black;
         }
+
         nav ul li {
             font-size: 16px;
         }
-        #subtle{
+
+        #subtle {
             position: relative;
             top: 19px;
             font-size: 14px;
         }
-        .bt_right h3,.bt_right hr, .bt_middle ul li a {
+
+        .bt_right h3,
+        .bt_right hr,
+        .bt_middle ul li a {
             position: relative;
             top: -11px;
         }
+
         .bt_right ul li a {
             position: relative;
             top: -18px;
         }
+
         .bt_right h3 {
             /* top: -20px; */
             z-index: 530;
         }
+
         nav ul li:nth-child(3) {
             color: black;
-            font-size:18px;
+            font-size: 18px;
         }
+
         .container {
             background-color: white;
             align-items: center;
-            
+
         }
+
         .container input[type='text']:focus {
             outline: #af9331;
             box-shadow: 0 0 5px #af9331;
             border: 1px solid #af9331;
         }
+
         footer {
             position: relative;
             top: 150px;
         }
-        
+
         select option:hover {
             background-color: #af9331;
         }
+
         select option {
             color: black;
         }
+
         /* images*/
         ol,
         ul {
@@ -130,13 +144,15 @@
  */
         .container {
             border: none;
-        } 
+        }
+
         .btn {
             border: 1px solid #af9331;
             background-color: #af9331;
             border-radius: 1px;
         }
-        .btn:hover{
+
+        .btn:hover {
             background-color: #af9331;
             border: 1px solid black;
         }
@@ -194,9 +210,11 @@
 
         .center {
             position: relative;
-            left: 15%;
-            top: 5pc;
-            width: 115%;
+            /* left: 15%; */
+            align-items: center;
+            top: 4pc;
+
+            width: 129%;
         }
 
         /** MEDIA QUERIES **/
@@ -232,9 +250,25 @@
                 width: 100%;
             }
 
+            .container {
+                height: 830px;
+                background-color: white;
+                align-items: center;
+
+            }
+
             .center {
                 position: relative;
-                left: -20px;
+                top: 4pc;
+                left: -15%;
+                overflow: hidden;
+                align-items: center;
+
+            }
+            #form #sub {
+                width: 57%;
+                left: 4%;
+                position: relative;
             }
 
             .cart-img-show {
@@ -246,6 +280,20 @@
                 width: 100%;
             }
 
+            #allIcons {
+                position: relative;
+                top: 29%;
+            }
+
+
+        }
+
+        .paying {
+            display: none;
+        }
+
+        .panel-info {
+            bottom: -220px;
         }
 
         /*

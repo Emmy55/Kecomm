@@ -16,6 +16,13 @@
 </head>
 
 <body>
+
+  <div id="covering-div">
+    <div id='preloader'>
+      <!-- <img src="{% static 'kobosh/bokoshPreloader.png' %}" alt="" /> -->
+    </div>
+</div>
+
   <nav>
     
     <div class="burger">
@@ -47,7 +54,7 @@
     <form id="search-form" action="{% url 'kobosh:search' %}" method="get">
       <input type="search" name="query" id="search-input" placeholder="Search Products" />
     </form>
-    <div class="icons">
+    <div class="icons" id="allIcons">
       <i class="fa-solid fa-magnifying-glass" id="search"></i>
       <i onclick='location.href="{% url 'members:login_user' %}"' | escapejs id="profile" class="fa-solid fa-user"></i>
       <i onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs id="cart"
@@ -301,6 +308,21 @@ btn.addEventListener("click", (event) => {
 // });
 
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      // Add the 'loaded' class to the body after the page has loaded
+      document.body.classList.add('loaded');
+  });
+</script>
+<script>
+  let preloader = document.getElementById('preloader')
+  let backGround = document.getElementById('covering-div')
+  window.addEventListener("load", function(){
+    preloader.style.display = 'none';
+    backGround.style.display = 'none';
+  })
+</script>
+
 
 </body>
 

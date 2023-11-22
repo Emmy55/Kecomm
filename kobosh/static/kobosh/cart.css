@@ -10,7 +10,6 @@
 
 
 .center-wrapper {
-  padding: 0.5rem;
   display: flex;
   margin-top: 30px;
   flex-direction: column;
@@ -19,12 +18,13 @@
 }
 
 .content {
-  margin: 0 auto;
-  padding:10px;
+  margin: 5px
+   auto;
+  /* padding:10px; */
   max-width: 600px;
   border: 1px solid rgb(233, 212, 23);
   margin-top: 5%;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   background: white;
 }
 
@@ -224,14 +224,32 @@ input[type=text] {
 .quantity-wrapper label {
   font-size: 0.9rem;
 }
+#form #subtle {
+ right:11%;
+ position: relative;
+}
+#form #sub {
+  width: 47%;
+ 
+}
 @media only screen and (max-width: 767px) {
+  #form #subtle {
+    right:11%;
+    position: relative;
+   }
+   #form #sub {
+     width: 60%;
+     left: 3%;
+    position: relative;
+   }
   .content {
-    margin: 0 auto;
-    padding:10px;
-    max-width: 600px;
+    /* margin: 0 auto; */
+    background-color: rebeccapurple;
+    padding:10px 0px;
+    max-width: 380px;
     border: 1px solid rgb(233, 212, 23);
     margin-top: 5%;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     background: white;
     position: relative;
     top: 2pc;
@@ -253,4 +271,6 @@ input[type=text] {
   .description h2 {
     font-size: 12px;
   }
+
+
 }

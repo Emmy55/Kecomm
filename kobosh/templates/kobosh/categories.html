@@ -60,15 +60,15 @@
       <div class="prod swiper">
         <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
           <div class="swiper-slide">
-            <img src="{% if product.image %}{{ product.image }}{% else %}{% 
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
               static "img/no_image.png" %}{% endif %}" alt="">
           </div>
           <div class="swiper-slide">
-            <img src="{% if product.image1 %}{{ product.image1 }}{% else %}{% 
+            <img src="{% if product.image1 %}{{ product.image1.url }}{% else %}{% 
               static "img/no_image.png" %}{% endif %}" alt="">
           </div>
           <div class="swiper-slide">
-            <img src="{% if product.image2 %}{{ product.image2 }}{% else %}{% 
+            <img src="{% if product.image2 %}{{ product.image2.url }}{% else %}{% 
               static "img/no_image.png" %}{% endif %}" alt="">
           </div>
         </div>

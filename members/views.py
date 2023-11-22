@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.password_validation import validate_password
 from kobosh.models import Category, Product 
 from django.shortcuts import render, get_object_or_404
+from members.models import CustomUser
 
 def login_user(request,category_slug=None):
     category = None
@@ -52,10 +53,11 @@ def signup_user(request,category_slug=None):
         products = products.filter(category=category)
     
     if request.method == 'POST':
+        full_name = request.POST.get("full_name")
         email = request.POST.get("email")
         password = request.POST.get("pass")
         password1 = request.POST.get("cpass")
-        username = request.POST.get("full_name")
+        number = request.POST.get("number")
 
         # Check if passwords match
         if password != password1:
@@ -70,12 +72,12 @@ def signup_user(request,category_slug=None):
             return redirect('members:signup_user')
 
         # Check if email already exists
-        if User.objects.filter(email=email).exists():
+        if CustomUser.objects.filter(email=email).exists():
             messages.error(request, "Email already exists. Please use a different email.")
             return redirect('members:signup_user')
 
         # Create the user
-        user = User.objects.create_user(email=email, password=password, username=username)
+        user = CustomUser.objects.create_user(email=email, password=password, number=number, full_name=full_name)
         user.save()
 
         return redirect('kobosh:home')
@@ -108,3 +110,8 @@ def forgotpass(request,category_slug=None):
         'products': products
         }
     return render(request, 'members/forgotpass.html', context)
+
+
+
+def profile(resquest): 
+    return render(resquest, 'members/profilePage.html')

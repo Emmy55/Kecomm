@@ -50,7 +50,6 @@
         <div class="swiper-slide">
           <img src="{% static 'kobosh/hero_image5.png' %}" alt="" />
         </div>
-        ...
       </div>
       <!-- If we need pagination -->
       <div class="swiper-pagination"></div>
@@ -65,7 +64,7 @@
 
  {% for c in categories %}
  <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image }}" alt="alternate image" />
+        <img id="categImage" onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
       <h3>{{ c.name }}</h3>
     </div>
  {% endfor %}
@@ -90,15 +89,15 @@
       <div class="swiper-wrapper" onclick="location.href='{{ product.get_absolute_url }}'">
   
         <div class="swiper-slide">
-          <img src="{% if product.image %}{{ product.image }}{% else %}{% 
+          <img src="{% if product.image %}{{ product.image.url }}{% else %}{% 
             static "img/no_image.png" %}{% endif %}" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{% if product.image1 %}{{ product.image1 }}{% else %}{% 
+          <img src="{% if product.image1 %}{{ product.image1.url }}{% else %}{% 
             static "img/no_image.png" %}{% endif %}" alt="">
         </div>
         <div class="swiper-slide">
-          <img src="{% if product.image2 %}{{ product.image2 }}{% else %}{% 
+          <img src="{% if product.image2 %}{{ product.image2.url }}{% else %}{% 
             static "img/no_image.png" %}{% endif %}" alt="">
         </div>
       </div>
@@ -118,17 +117,17 @@
   </div>
 </div>
 
-<div class="discount">
+<!-- <div class="discount">
   <div class="discount_shop">
     <h3>Get up to 10%</h3>
     <h1>Discount</h1>
     <h2>On All Sales This Week</h2>
     <a href="{% url 'kobosh:cate' %}">SHOP NOW</a>
   </div>
-  <!-- <div class="all_discount">
+  <div class="all_discount">
     <img src="dicount.png" alt="">
-  </div> -->
-  <!-- <div class="all_discount">
+  </div>
+  <div class="all_discount">
     <img src="discount1.png" alt="">
   </div>
   <div class="all_discount">
@@ -136,8 +135,8 @@
   </div>
   <div class="all_discount">
     <img src="discount3.png" alt="">
-  </div> -->
-</div>
+  </div>
+</div> -->
 <img id="all_img" src="{% static 'kobosh/multiplead.png' %}" alt="" />
 <img id="all_img1" src="{% static 'kobosh/multiplead1.png' %}" alt="">
 
@@ -163,7 +162,7 @@
 
     {% for c in categories %}
     <div id="point" {% if category.slug == c.slug %} class="all" {% endif %} >
-      <img onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image }}" alt="" />
+      <img id="categImageFoot" onclick='location.href="{{ c.get_absolute_url }}"' src="{{ c.image.url }}" alt="" />
          <h3>{{ c.name }}</h3>
        </div>
     {% endfor %}

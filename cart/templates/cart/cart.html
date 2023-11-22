@@ -113,6 +113,9 @@ nav input {
         border-radius: 50px;
         border-radius: 50px 0px 0px 50px;
     }
+    .btn-go-checkout:hover {
+        cursor: pointer;
+    }
 	}
 	</style>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -125,7 +128,7 @@ nav input {
                 {% with product=item.product %}
                     <div class="bag-product">
                         <div class="image">
-                            <img onclick="location.href='{{ product.get_absolute_url }}'" src="{% if product.image %}{{ product.image }}{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
+                            <img onclick="location.href='{{ product.get_absolute_url }}'" src="{% if product.image %}{{ product.image.url }}{% else %}{% static "img/no_image.png" %}{% endif %}" class="product-image">
                         </div>
                         <div class="description">
                             <h1>{{ product.name }}</h1>
@@ -146,7 +149,7 @@ nav input {
 <div class="bag-total">
     <div class="subtotal">
         <p class="small">Subtotal:</p>
-        <p class="small">NGN {{ cart.get_total_price }}</p>
+        <p class="small">NGN {{ cart.get_total_price|intcomma }}</p>
     </div>
     <div class="delivery">
         <p class="small">Delivery (Standard - 2 working days):<br>
@@ -156,11 +159,26 @@ nav input {
     </div>
     <div class="total">
         <h3>Total:</h3>
-        <h3>NGN {{ cart.get_total_price }}</h3>
+        <h3>NGN {{ cart.get_total_price|intcomma }}</h3>
     </div>
 
-                <button type="submit" class="btn-go-checkout">
+
+    <form method="POST" action="https://checkout.flutterwave.com/v3/hosted/pay">
+        <div>
+          Your order is N2,000
+        </div>
+        <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
+        <input type="hidden" name="customer[email]" value="test@mailnator.com" />
+        <input type="hidden" name="customer[name]" value="Ayomide Jimi-Oni" />
+        <input type="hidden" name="tx_ref" value="txref-81123" />
+        <input type="hidden" name="amount" value="2000" />
+        <input type="hidden" name="currency" value="NGN" />
+        <input type="hidden" name="meta[source]" value="docs-html-test" />
+        <br>
+
+                <button type="submit" id="start-payment-button" class="btn-go-checkout" onClick="makePayment(paymentParams['{{ plan.name }}'])">
                     <i class="fas fa-lock"></i>
+                    {{ plan.pay_button_text }}
                     <span>Go to Checkout</span>
                 </button>
         </form>
@@ -175,6 +193,36 @@ nav input {
 </div>
 <div class="bg"></div>
 
+
+
+
+
+
+<script>
+    function createPaymentParams() {
+        // Create payment params which will be sent to Flutterwave upon payment
+       
+        paymentParams['{{ plan.name }}'] = {
+            public_key: pay_button_params.public_key,
+            tx_ref: pay_button_params.tx_ref,
+            amount: '{{ plan.amount }}',
+            currency: '{{ plan.currency }}',
+            redirect_url: pay_button_params.redirect_url,
+            payment_plan: '{{ plan.flw_plan_id }}',
+            customer: {
+                email: '{{ user.email }}',
+                name: '{{ user.first_name }} {{ user.last_name }}',
+            },
+            customizations: {
+                title: '{{ plan.modal_title }}',
+                logo: '{{ plan.modal_logo_url }}',
+            },
+        }
+    }
+    if ('{{ user.is_authenticated }}' === 'True') {
+        createPaymentParams();
+    }
+</script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>

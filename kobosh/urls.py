@@ -5,6 +5,7 @@ app_name = "kobosh"
 
 urlpatterns = [
     path('payment/', views.payment, name='payment'),
+    path('successful/', views.success, name='success'),
     path('thebasement/', views.home, name='thebasement'),
     path('', views.home, name='home'),
     path('categories/', views.home, name='cate'),

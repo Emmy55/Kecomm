@@ -172,29 +172,26 @@
     position: relative;
   }
 
-  .all .prod button {
-    height: 10%;
-    color: black;
-    border-radius: 10px;
-    border: none;
-    font-weight: bolder;
-    width: 48%;
-    position: relative;
-    left: 4%;
-    top: -37px;
-    font-size: 12px;
-    /* text-align: center; */
-  }
   #old_pric {
     position: relative;
     top: -90px;
     z-index: 190999;
   }
-
-  .all img {
+  .swiper-wrapper {
+    height: 60%;
+  }
+  .swiper-slide {
+    position: relative;
+    left: 8px;
+    height: 26%;
+  }
+  .all .swiper .swiper-wrapper .swiper-slide img {
     width: 100%;
+    background-size: contain;
+    position: relative;
+    left: -13px;
     border-radius: 20px 20px 0px 0px;
-    height: 69%;
+    height: 68%;
   }
 
   .all h2 {
@@ -252,6 +249,19 @@
         left: 8.5%;
         position: relative;
         width: 102%;
+      }
+      .all .prod .swiper-wrapper .swiper-slide button {
+        height: 10%;
+        color: black;
+        border-radius: 10px;
+        border: none;
+        font-weight: bolder;
+        width: 28px;
+        position: relative;
+        left: 4%;
+        /* top: -37px; */
+        font-size: 12px;
+        /* text-align: center; */
       }
   }
 

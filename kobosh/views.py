@@ -10,6 +10,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login, logout
 from django.contrib.auth.decorators import login_required
 
+from django.contrib import messages
+from django.contrib.auth.password_validation import validate_password
+from .models import PaymentUser
 
 import re
 from bs4 import BeautifulSoup
@@ -88,6 +91,21 @@ def payment(request,category_slug=None):
         'products': products
         }
     
+
+    if request.method == 'POST':
+        full_name = request.POST.get("customer[name]")
+        address = request.POST.get("address")
+        city = request.POST.get("city")
+        state = request.POST.get("state")
+        zip_code = request.POST.get("zip_code")
+        phone_number = request.POST.get("phone_number")
+        email = request.POST.get("customer[email]")
+
+        
+        # Create the user
+        user = PaymentUser.objects.create_user(email=email, address=address, phone_number=phone_number, full_name=full_name, city=city, zip_code=zip_code, state=state)
+        user.save()
+    
     return render(request, 'kobosh/payments.html', context)
 
 
@@ -115,3 +133,8 @@ def search(request,category_slug=None):
         'results': result,
         }
         return render(request, 'kobosh/result.html',context)
+
+
+def success(resquest): 
+    return render(resquest, 'kobosh/successfulPage.html')
+

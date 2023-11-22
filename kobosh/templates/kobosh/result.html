@@ -118,14 +118,21 @@
                 left: 10%;
                 margin-bottom: 20px;
             }
+            #failure {
+                height: 19px;
+                color: black;
+                z-index: 2;
+                overflow: hidden;
+                font-size: 14px;
+            }
         }
 
         @media only screen and (min-width: 1024px) {
 
 
-            h3 {
+            #failure {
                 height: 19px;
-                color: red;
+                color: black;
                 z-index: 9999;
                 overflow: hidden;
             }
@@ -305,7 +312,7 @@
         {% endfor %}
         {% else %}
             <br>
-            <h3>No search results found.</h3>
+            <h3 id="failure">No search results found.</h3>
         {% endif %}
     </div>
 

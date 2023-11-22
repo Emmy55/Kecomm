@@ -180,7 +180,7 @@
    
     <div class="items">
         <div class="items_img">
-            <img src="{% if product.image %}{{ product.image }}{% else %}
+            <img src="{% if product.image %}{{ product.image.url }}{% else %}
             {% static 'img/no_image.png' %}{% endif %}" alt="">
         </div>
 

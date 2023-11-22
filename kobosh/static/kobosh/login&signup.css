@@ -166,6 +166,9 @@ input {
     left: -17px;
     text-decoration: underline;
 }
+.newsletter input[type='submit'] {
+  color: white;
+}
 
 
 @media screen and (max-width:767px) {

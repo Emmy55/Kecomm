@@ -1,0 +1,59 @@
+{% extends "kobosh/base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block 'content' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+        .success img {
+            position: relative;
+            left: 32%;
+            top: 17%;
+
+        }
+        .success {
+            justify-content: center;
+            align-items: center;
+            height: 35pc;
+            width: 100%;
+            position: relative;
+            /* background-color: red; */
+            z-index: 7;
+        }
+               
+@media only screen and (max-width: 767px) {
+    .success img {
+            position: relative;
+            left: 17%;
+            top: 17%;
+            width: 65%;
+
+        }
+        .success {
+            margin: 35px 35px 35px 0px;
+            justify-content: center;
+            align-items: center;
+            height: 14pc;
+            top: 2pc;
+            width: 100%;
+            position: relative;
+            /* background-color: red; */
+            z-index: 7;
+        }
+}
+    </style>
+</head>
+<body>
+    <div class="success">
+        <img src="{% static 'kobosh/success.png' %}" alt="" />
+    </div>
+</body>
+</html>
+{% endblock %}

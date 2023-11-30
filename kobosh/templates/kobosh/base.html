@@ -13,6 +13,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="shortcut icon" href="{% static 'kobosh/hero_image.png' %}" type="image/x-icon">
   <link rel="stylesheet" href="{% static 'kobosh/style.css' %}">
+  <style>
+    #noOfItem{
+      position: absolute;
+      padding: 2px 7px 2px 7px;
+      /* z-index: 999999; */
+      top: -62%;
+      left: 18px;
+      /* height: 10px;
+      width: 10px; */
+      text-align: center;
+      font-size: 10px;
+      color: white;
+      border-radius: 20px;
+      background-color: black;
+    }
+  </style>
 </head>
 
 <body>
@@ -57,6 +73,7 @@
     <div class="icons" id="allIcons">
       <i class="fa-solid fa-magnifying-glass" id="search"></i>
       <i onclick='location.href="{% url 'members:login_user' %}"' | escapejs id="profile" class="fa-solid fa-user"></i>
+      <!-- <p id="noOfItem">0{{ cart_item_count }}</p> -->
       <i onclick='location.href="{% url 'cart:cart_detail' %}"' | escapejs id="cart"
         class="fa-solid fa-cart-shopping"></i>
     </div>
@@ -150,6 +167,15 @@
     <i onclick="location.href='.'" class="fa-solid fa-arrow-up" id="arrow"></i>
   </div>
 
+
+
+
+  
+  <script>
+  function updateItemCount() {
+            document.getElementById('noOfItem').innerText = {{ cart_item_count }};
+        }
+</script>
 
 <script>
   const select = document.getElementById('mySelect');

@@ -73,6 +73,16 @@
                 border-radius: 15px;
                 color: white;
             }
+            #quantity {
+                top: -1pc;
+                left: -57px;
+                position: relative;
+            }
+          #cartbtn {
+            position: absolute;
+            top: 27px;
+            left: 53px;
+          }
         }
 
         @media screen and (min-width:1200px) {
@@ -190,10 +200,11 @@
             <del><sub style="color: black;">&#8358; {{ product.old_price }}</sub></del>
             <!-- <p><strong style="color: #AF9331;">&#8358;{{ product.new_price|intcomma }} </strong></p> -->
             <div class="des">{{ product.description }}</div>
-            <form action="{% url 'cart:cart_add' product.id %}" method="post">
+            <form action="{% url 'cart:cart_add' product.id %}" method="post" id="quantity">
                 {{ cart_product_form }}
+                <br>
                 {% csrf_token %}
-                <input style="cursor: pointer;" type="submit" name="" id="" value="Add to Cart">
+                <input style="cursor: pointer;" type="submit" name="" id="cartbtn" value="Add to Cart">
             </form>
         </div>
     </div>

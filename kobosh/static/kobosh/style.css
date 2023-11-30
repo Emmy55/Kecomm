@@ -19,7 +19,7 @@
         z-index: 9999;
         width: 120vw;
         height: 230vh;
-        background-size: 50%;
+        background-size: 10%;
         background: white no-repeat center;
     }
     #preloader {
@@ -32,7 +32,7 @@
         z-index: 9999;
         width: 100vw;
         height: 100vh;
-        background-size: 50%;
+        background-size: 50px;
         background: white url(bokoshPreloader.png) no-repeat center;
     }
     @keyframes rotate {

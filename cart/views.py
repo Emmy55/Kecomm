@@ -3,6 +3,7 @@ from kobosh.models import Category, Product
 from .cart import Cart
 from .forms import CartAddProductForm
 from django.contrib.auth.models import User
+from django.http import JsonResponse
 
 
 
@@ -20,14 +21,13 @@ from rest_framework.generics import CreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from .models import CartAddProductForm
 
 # project imports
 from Koboshecom import settings
 from cart.models import FlwTransactionModel, FlwPlanModel
 from cart.serializers import DRTransactionSerializer
 from cart.utils import create_transaction_ref
-
-
 
 
 def cart_add(request, product_id):
@@ -40,7 +40,7 @@ def cart_add(request, product_id):
         if form.is_valid():
             cd = form.cleaned_data
             cart.add(product=product, quantity=cd['quantity'], override_quantity=cd['override'])
-            
+           
     return redirect('cart:cart_detail')   
 
 def cart_remove(request, product_id):

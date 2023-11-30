@@ -39,7 +39,7 @@
                     {% endfor %}
             </ul>
             {% endif %}
-            <form action="" method="post" style="left: 9px; position: relative;">
+            <form action="{% url 'members:profile' %}" method="post" style="left: 9px; position: relative;">
                 {% csrf_token %}
 
                 <h2>Login</h2>

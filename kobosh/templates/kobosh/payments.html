@@ -1,6 +1,7 @@
 {% extends 'kobosh/base.html' %}
 
 {% block 'content' %}
+{% load humanize %}
 
 {% load static %}
 
@@ -24,12 +25,14 @@
                 position: relative;
                 top: 29pc;
             }
+
             #sub {
                 font-size: 14px;
                 width: 50%;
                 position: relative;
                 /* top: -1.6pc; */
             }
+
             #subtle {
                 width: 29%;
                 font-size: 10px;
@@ -37,25 +40,27 @@
                 left: -24.7px;
                 top: 20px;
             }
+
             .bt_right h3 {
                 margin-top: 0px;
                 height: 30px;
                 padding-top: 10px;
                 z-index: 9999;
             }
-            
+
         }
     </style>
+
 
 </head>
 
 <body>
 
-    <div class="container wrapper">
+    <div class="container wrapper" id="address">
         <div>
-            <form class="form-horizontal" method="post" action="https://checkout.flutterwave.com/v3/hosted/pay">
-
-                <!-- <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 col-md-pull-6 col-sm-pull-6"> -->
+            <form method="POST" action="" >
+                {% csrf_token %} 
+                
                 <div class="center">
                     <!--SHIPPING METHOD-->
                     <div class="panel panel-info">
@@ -66,23 +71,13 @@
                                     <h4>Shipping Address</h4>
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
-                                <div class="col-md-12"><strong>Country:</strong></div>
-                                <div class="col-md-12">
-                                    <input type="text" id="input1" class="form-control" name="country" value="" />
-                                </div>
-                            </div> -->
                             <div class="form-group">
-                                <div class="col-md-6 col-xs-12">
-                                    <strong>First Name:</strong>
-                                    <input type="text" id="input2" name="customer[name]" class="form-control" value="" />
-                                </div>
-                                <div class="span1"></div>
-                                <div class="col-md-6 col-xs-12">
-                                    <strong>Last Name:</strong>
-                                    <input type="text" id="input3" name="last_name" class="form-control" value="" />
+                                <div class="col-md-12"><strong>Username:</strong></div>
+                                <div class="col-md-12">
+                                    <input type="text" id="input1" class="form-control" name="username" value="" />
                                 </div>
                             </div>
+                            
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Address:</strong></div>
                                 <div class="col-md-12">
@@ -110,127 +105,37 @@
                             <div class="form-group">
                                 <div class="col-md-12"><strong>Phone Number:</strong></div>
                                 <div class="col-md-12">
-                                    <input type="text" id="input8" name="phone_number" class="form-control"
-                                        value="" /></div>
+                                    <input type="text" id="input8" name="phone_number" class="form-control" value="" />
+                                </div>
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12"><strong>Email Address:</strong></div>
-                                <div class="col-md-12">
-                                    <input type="text" id="input9" name="customer[email]" class="form-control"
-                                        value="" /></div>
+                                
                             </div>
                         </div>
                     </div>
-
-                    <input type="hidden" name="public_key" value="FLWPUBK_TEST-SANDBOXDEMOKEY-X" />
-                    <input type="hidden" name="customer[email]" value="test@mailnator.com" />
-                    <input type="hidden" name="customer[name]" value="Ayomide Jimi-Oni" />
-                    <input type="hidden" name="tx_ref" value="txref-81123" />
-                    <input type="hidden" name="redirect_url" value="https://demoredirect.localhost.me/" />
-                    <input type="hidden" name="amount" value="2000" />
-                    <input type="hidden" name="currency" value="NGN" />
-                    <input type="hidden" name="meta[source]" value="docs-html-test" />
+                    <br>
                     <br>
 
-                    <div class="">
-                        <button type="submit" id="start-payment-button" class="btn btn-primary btn-submit-fix">Place Order</button>
-                    </div>
+                    <!-- <div class=""> -->
+                    <button type="submit" id="start-payment-button" class="btn btn-primary btn-submit-fix">Add address
+                    </button>
+                    
+                    <!-- </div> -->
                     <!--SHIPPING METHOD END-->
-
-                    <!--CREDIT CART PAYMENT-->
-                    <div class="panel panel-info paying">
-                        <div class="panel-heading"><span><i class="glyphicon glyphicon-lock"></i></span> Secure Payment
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Card Type:</strong></div>
-                                <div class="col-md-12">
-                                    <select id="CreditCardType" name="CreditCardType" class="form-control">
-                                        <option value="5">Visa</option>
-                                        <option value="6">MasterCard</option>
-
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Credit Card Number:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_number"
-                                        value="" /></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12"><strong>Card CVV:</strong></div>
-                                <div class="col-md-12"><input type="text" class="form-control" name="car_code"
-                                        value="" /></div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <strong>Expiration Date</strong>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Month</option>
-                                        <option value="01">01</option>
-                                        <option value="02">02</option>
-                                        <option value="03">03</option>
-                                        <option value="04">04</option>
-                                        <option value="05">05</option>
-                                        <option value="06">06</option>
-                                        <option value="07">07</option>
-                                        <option value="08">08</option>
-                                        <option value="09">09</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                                    <select class="form-control" name="">
-                                        <option value="">Year</option>
-                                        <option value="2015">2015</option>
-                                        <option value="2016">2016</option>
-                                        <option value="2017">2017</option>
-                                        <option value="2018">2018</option>
-                                        <option value="2019">2019</option>
-                                        <option value="2020">2020</option>
-                                        <option value="2021">2021</option>
-                                        <option value="2022">2022</option>
-                                        <option value="2023">2023</option>
-                                        <option value="2024">2024</option>
-                                        <option value="2025">2025</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <span>Pay secure using your credit card.</span>
-                                </div>
-                                <div class="col-md-12">
-                                    <ul class="cards">
-                                        <li class="visa hand">Visa</li>
-                                        <li class="mastercard hand">MasterCard</li>
-                                        
-                                    </ul>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="">
-                                    <button type="submit" class="btn btn-primary btn-submit-fix">Place Order</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--CREDIT CART PAYMENT END-->
-                </div>
-
-            </form>
+                </form>
+                <br>
+                <br>
+                
+                
         </div>
     </div>
+</div>
+</body>
 
     <script>
         function checkInputs() {
             // Get the values from the input elements
-            let input1Value = document.getElementById("input1").value;
+            // let input1Value = document.getElementById("input1").value;
             let input2Value = document.getElementById("input2").value;
             let input3Value = document.getElementById("input3").value;
             let input4Value = document.getElementById("input4").value;
@@ -239,10 +144,10 @@
             let input7Value = document.getElementById("input7").value;
             let input8Value = document.getElementById("input8").value;
             let input9Value = document.getElementById("input9").value;
-    
+
             // Get the submit button
             var submitButton = document.getElementById("start-payment-button");
-    
+
             // Enable the submit button only if all inputs are filled
             if (input1Value && input2Value && input3Value && input4Value &&
                 input5Value && input6Value && input7Value && input8Value && input9Value) {
@@ -252,18 +157,17 @@
             }
         }
     </script>
-    
+
 
     <script>
         let selectElement = document.getElementById('mySelect');
-        selectElement.addEventListener('change', function() {
-          const selectedValue = this.value;
-          if (selectedValue !== '') {
-            window.location.href = selectedValue;
-          }
+        selectElement.addEventListener('change', function () {
+            const selectedValue = this.value;
+            if (selectedValue !== '') {
+                window.location.href = selectedValue;
+            }
         });
-      </script>
-</body>
+    </script>
 
 
 </html>

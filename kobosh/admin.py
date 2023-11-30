@@ -1,7 +1,7 @@
 from django.contrib import admin
 # Register your models here.
 from django.contrib import admin
-from .models import Category, Product,PaymentUser
+from .models import Category, Product, PaymentUser
 # from .models import PaymentUser
 from django.contrib.auth.admin import UserAdmin
 
@@ -20,12 +20,27 @@ class ProductAdmin(admin.ModelAdmin):
 
 
 
-class CustomUserAdmin(UserAdmin):
+class PaymentUserAdmin(UserAdmin):
     model = PaymentUser
-    list_display = ('email', 'full_name', 'is_staff', 'phone_number', 'address', 'city', 'state', 'zip_code',  )
+    list_display = ('username','address', 'is_staff', 'phone_number', 'city', 'state', 'zip_code',  )
     list_filter = ('is_staff', 'is_superuser', 'is_active', 'groups')
-    search_fields = ('email', 'full_name')
-    ordering = ('email',)
+    
+    fieldsets = (
+        (None, {'fields': ('username', )}),
+        ('Personal Info', {'fields': ('city', 'address', 'state', 'zip_code', )}),
+        ('Permissions', {
+            'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions'),
+        }),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'address' ),
+        }),
+    )
+    search_fields = ('username', 'address')
+    ordering = ('username',)
 
 # Register the CustomUserAdmin with the admin site
-admin.site.register(PaymentUser, CustomUserAdmin)
+admin.site.register(PaymentUser, PaymentUserAdmin)

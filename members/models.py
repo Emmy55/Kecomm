@@ -23,11 +23,11 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, Group
 from django.utils.translation import gettext_lazy as _
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
-    email = models.EmailField(unique=True)
     full_name = models.CharField(max_length=50)
+    email = models.EmailField(unique=True)
+    number = models.CharField(max_length=15)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
-    number = models.CharField(max_length=15)
 
     objects = CustomUserManager()
 

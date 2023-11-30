@@ -1,0 +1,80 @@
+{% extends 'kobosh/base.html' %}
+
+{% block 'content' %}
+{% load humanize %}
+
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'kobosh/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'kobosh/payments.css' %}">
+</head>
+<body>
+    <div class="container wrapper" id="names">
+        <form action="https://checkout.flutterwave.com/v3/hosted/pay" method="post"  >
+            
+            <div class="center">
+        <!--CREDIT CART PAYMENT-->
+        <div class="panel panel-info paying">
+            <div class="panel-heading"> Secure Payment
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <div class="col-md-6 col-xs-12">
+                        <strong>First Name:</strong>
+                        <input type="text" id="input2" name="customer[name]" class="form-control" value="" />
+                    </div>
+                    <div class="span1"></div>
+                    <div class="col-md-6 col-xs-12">
+                        <strong>Last Name:</strong>
+                        <input type="text" id="input3" name="last_name" class="form-control" value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12"><strong>Email Address:</strong></div>
+                    <div class="col-md-12">
+                        <input type="text" id="input9" name="customer[email]" class="form-control" value="" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+                    
+                </div>
+                <div class="form-group">
+
+                </div>
+            </div>
+        </div>
+        
+
+        <input type="hidden" name="public_key" value="FLWPUBK_TEST-02b9b5fc6406bd4a41c3ff141cc45e93-X" />
+        <input type="hidden" name="tx_ref" value="dfs23fhr7ntg0293039_PMCK_1" />
+        <input type="hidden" name="amount" value="{{ cart.get_total_price|floatformat:2 }}" />
+
+        <input type="hidden" name="currency" value="NGN" />
+        <input type="hidden" name="meta[source]" value="docs-html-test" />
+        <br>
+        <button type="submit" id="start-payment-button" class="btn btn-primary btn-submit-fix">Place
+            Order</button>
+        <!--CREDIT CART PAYMENT END-->
+    </div>
+
+</div>
+</form>
+</div>
+</body>
+</html>
+
+
+{% endblock %}

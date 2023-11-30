@@ -4,6 +4,7 @@ from . import views
 app_name = "kobosh"
 
 urlpatterns = [
+    path('paymentname/', views.paymentname, name='paymentname'),
     path('payment/', views.payment, name='payment'),
     path('successful/', views.success, name='success'),
     path('thebasement/', views.home, name='thebasement'),

@@ -13,10 +13,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.contrib.auth.password_validation import validate_password
 from .models import PaymentUser
+from django.urls import reverse
 
 import re
 from bs4 import BeautifulSoup
 from django.db.models import Q
+from cart.cart import Cart
 
 
 def home(request,category_slug=None):
@@ -76,6 +78,31 @@ def product_detail(request, id, slug,category_slug=None):
 
 
 def payment(request,category_slug=None):
+    if request.method == 'POST':
+        username = request.POST.get("username")
+        address = request.POST.get("address")
+        city = request.POST.get("city")
+        state = request.POST.get("state")
+        zip_code = request.POST.get("zip_code")
+        phone_number = request.POST.get("phone_number")
+
+    try:
+        # Create the user
+        user = PaymentUser.objects.create_user(
+            username=username,
+            address=address,
+            phone_number=phone_number,
+            city=city,
+            zip_code=zip_code,
+            state=state
+        )
+        user.save()
+        # print(user)
+        return redirect(reverse('kobosh:paymentname'))
+    except Exception as e:
+        # Handle the exception (e.g., log it, show an error message)
+        print(f"Error creating user: {e}")
+
     category = None
     categories = Category.objects.all()
 
@@ -85,26 +112,14 @@ def payment(request,category_slug=None):
                                      slug=category_slug)
         products = products.filter(category=category)
     
+    cart = Cart(request)
     context = {
+        'cart': cart,
         'category' : category,
         'categories': categories,
         'products': products
         }
-    
 
-    if request.method == 'POST':
-        full_name = request.POST.get("customer[name]")
-        address = request.POST.get("address")
-        city = request.POST.get("city")
-        state = request.POST.get("state")
-        zip_code = request.POST.get("zip_code")
-        phone_number = request.POST.get("phone_number")
-        email = request.POST.get("customer[email]")
-
-        
-        # Create the user
-        user = PaymentUser.objects.create_user(email=email, address=address, phone_number=phone_number, full_name=full_name, city=city, zip_code=zip_code, state=state)
-        user.save()
     
     return render(request, 'kobosh/payments.html', context)
 
@@ -138,3 +153,17 @@ def search(request,category_slug=None):
 def success(resquest): 
     return render(resquest, 'kobosh/successfulPage.html')
 
+
+
+def cart_view(request):
+    cart = Cart(request)
+    cart_item_count = sum(item['quantity'] for item in cart)
+
+    return render(request, 'kobosh/base.html', {'cart_item_count': cart_item_count, 'cart': cart})
+
+def paymentname(request):
+    cart = Cart(request)
+    context = {
+        'cart': cart,
+        }
+    return render(request, 'kobosh/paymentName.html', context)

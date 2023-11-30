@@ -1,7 +1,11 @@
         .wrapper {
-            height: 50pc;
+            height: 43pc;
         }
-
+        #names {
+            position: relative;
+            top: 12pc;
+            margin-top: 20pc;
+        }
         strong {
             color: black;
         }
@@ -49,7 +53,11 @@
             box-shadow: 0 0 5px #af9331;
             border: 1px solid #af9331;
         }
-
+        #address {
+            position: relative;
+            /* top: 2pc; */
+            /* height: 1px; */
+        }
         footer {
             position: relative;
             top: 150px;
@@ -216,6 +224,10 @@
 
             width: 129%;
         }
+        #address {
+            position: relative;
+            top: -4pc;
+        }
 
         /** MEDIA QUERIES **/
         @media only screen and (max-width: 989px) {
@@ -244,22 +256,32 @@
         .form-control {
             border-radius: 1px;
         }
-
+        #names {
+            height: 300px;
+            margin-top: 130px;
+        }
         @media only screen and (max-width: 486px) {
+            .wrapper {
+                height: 50pc;
+            }
             .col-xss-12 {
                 width: 100%;
             }
 
             .container {
-                height: 830px;
+                height: 530px;
                 background-color: white;
                 align-items: center;
 
             }
-
+            #address {
+                position: relative;
+                top: -4pc;
+                height: 44pc;
+            }
             .center {
                 position: relative;
-                top: 4pc;
+                top: 10pc;
                 left: -15%;
                 overflow: hidden;
                 align-items: center;
@@ -289,11 +311,15 @@
         }
 
         .paying {
-            display: none;
+            display: block;
         }
 
         .panel-info {
             bottom: -220px;
+        }
+        #names {
+            position: relative;
+            top: -8pc;
         }
 
         /*

@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.password_validation import validate_password
 from kobosh.models import Category, Product 
 from django.shortcuts import render, get_object_or_404
-from members.models import CustomUser
+from .models import CustomUser
 
 def login_user(request,category_slug=None):
     category = None
@@ -24,9 +24,6 @@ def login_user(request,category_slug=None):
         user = authenticate(request, email=email, password=password)
         if user is not None:
             login(request, user)
-
- 
-
             return redirect('kobosh:home')
         else:
             messages.error(request, "There was an error logging in. Please try again.")
@@ -80,7 +77,7 @@ def signup_user(request,category_slug=None):
         user = CustomUser.objects.create_user(email=email, password=password, number=number, full_name=full_name)
         user.save()
 
-        return redirect('kobosh:home')
+        return redirect('members:login_user')
 
     
     context = {
@@ -113,5 +110,21 @@ def forgotpass(request,category_slug=None):
 
 
 
-def profile(resquest): 
-    return render(resquest, 'members/profilePage.html')
+def profile(request):
+    context = {}
+    
+    if request.user.is_authenticated:
+        user = request.user
+        full_name = user.full_name
+        number = user.number
+        email = user.email
+
+        context = {
+            'email': email,
+            'full_name': full_name,
+            'number': number,
+        }
+    else:
+        # Handle the case where the user is not authenticated (e.g., redirect to login page)
+        return redirect('members:login_user') 
+    return render(request, 'members/profilePage.html', context)

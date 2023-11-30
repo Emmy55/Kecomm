@@ -25,6 +25,9 @@ class Cart:
             self.cart[product_id]['quantity'] += quantity
         self.save()
 
+        total_quantity = sum(item['quantity'] for item in self.cart.values())
+        return total_quantity
+
     def save(self):
         # mark the session as "modified" to make sure it gets saved
         self.session.modified = True

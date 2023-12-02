@@ -29,7 +29,7 @@ SECRET_KEY = "django-insecure-cbgcc9jf3vyk%s7$j1ccnkx98*lu@nzt_w=*#3$nhbzd7s1qzt
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['bokosh.com.ng']
 
 
 CART_SESSION_ID = 'cart'
@@ -93,16 +93,16 @@ WSGI_APPLICATION = "Koboshecom.wsgi.application"
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        # 'NAME': 'd6p8ql4k7futq7',
-        # 'USER': 'ayjzjrmlesbaar',
-        # 'PASSWORD': '158516e434e094a17d54bbe4f29d753113b07e605b132769d0242cc93303fa1c',
-        # 'HOST': 'ec2-44-199-147-86.compute-1.amazonaws.com',
-        # 'PORT': '5432',
-
-        
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        "ENGINE": "mysql.connector.django",
+        'NAME': 'bokoshco_bokosh',
+        'USER': 'bokoshco_bokoshco',
+        'PASSWORD': 'Abasiuwem$50',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'autocommit': True,
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
     }
 
@@ -161,10 +161,10 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / '/media/'
-
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
